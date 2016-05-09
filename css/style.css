@@ -1,0 +1,1521 @@
+@font-face {
+  font-family: 'BYekan';
+  src: url('../fonts/BYekan.eot?#') format('eot'),  /* IE6–8 */
+       url('../fonts/BYekan.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('../fonts/BYekan.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+body{
+	background-color:#303E58;
+	font-family: tahoma;
+	font-size: 100%;
+	direction: rtl;
+}
+h2, h1 {
+	font-family: BYekan, tahoma;
+	line-height: 20px;
+	margin: 10px;
+	color: #717172;
+}
+h2 {
+	font-size: 20px;
+}
+h1 {
+	font-size: 27px;
+}
+p {
+	font-size: 17px;
+	font-family: BYekan,tahoma;
+	line-height: 20px;
+	margin: 0;
+	color: #717172;
+}
+label {
+	color: #717172;
+	font-family: BYekan,Tahoma;
+	font-size:16px;
+}
+legend {
+	padding:10px 20px;
+	color: #5B5C5C;
+	font-family: BKoodakBold,Tahoma;
+	font-size:130%;
+}
+strong {
+	margin-right: 30px;
+	float: right;
+}
+fieldset {
+	border: 0 none;
+	padding:5px;
+}
+.container.TopUp fieldset, .container.PIN fieldset, .container.WiMax fieldset {
+	margin-right:-45px!important;
+}
+div.form {
+	padding: 10px 20px;
+	direction: rtl;
+}
+.clear{
+	clear:both;
+}
+.bgs {
+	display:none;
+}
+div.container{
+	width:540px;
+	height:auto;
+	margin:20px auto;
+	border:1px solid #ffffff;
+	background: #feffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #feffff 0%, #f0f0f0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(100%,#f0f0f0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #feffff 0%,#f0f0f0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #feffff 0%,#f0f0f0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #feffff 0%,#f0f0f0 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #feffff 0%,#f0f0f0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#f0f0f0',GradientType=0 ); /* IE6-9 */
+	box-shadow:0 0 3px rgba(0, 0, 0, 0.5);
+	border-radius:10px 10px 10px 10px;
+}
+.operators{
+	float:right;
+	width:100px;
+	height:auto;
+	margin-top:60px;
+	-webkit-margin-top-collapse: discard;
+}
+.operators div {
+	width:150px;
+	height:90px;
+	margin-right:-28px;
+	float:right;
+	cursor:pointer;
+	margin-top: -15px;
+}
+.operator.MTN {
+	background:url("../img/mobile-operators.png") no-repeat -450px -91px;
+}
+.operator.MTN.active {
+	background-position:-450px 0;
+}
+.operator.MTN:hover {
+	background-position:-450px 0;
+}
+.operator.MCI {
+	background:url("../img/mobile-operators.png") no-repeat -300px -91px;
+}
+.operator.MCI.active {
+	background-position:-300px 0;
+}
+.operator.MCI:hover {
+	background-position:-300px 0;
+}
+.operator.RTL {
+	background:url("../img/mobile-operators.png") no-repeat -150px -91px;
+}
+.operator.RTL.active {
+	background-position:-150px 0;
+}
+.operator.RTL:hover {
+	background-position:-150px 0;
+}
+.operator.TAL {
+	background:url("../img/mobile-operators.png") no-repeat 0 -91px;
+}
+.operator.TAL.active {
+	background-position:0 0;
+}
+.operator.TAL:hover {
+	background-position:0 0;
+}
+div#logo{
+
+	height:51px;
+	cursor:pointer;
+	margin-top:80px;
+}
+div#content{
+	width:440px;
+	height: auto;
+	margin:10px auto;
+	text-align:center;
+	float:right;
+}
+.container.verify div#content {
+	float:none;
+}
+.container.Bill div#content, .container.GiftCard div#content, .container.TrafficCard div#content, .container.Antivirus div#content {
+	width: auto;
+	float: none;
+}
+div#content input, div#content select{
+	width:260px;
+	height:38px;
+	background-color:#f6f4f5;
+	border-radius: 10px;
+	border-color:#75839d;
+	margin:4px;
+	font-family: BYekan,Tahoma;
+	font-size:180%;
+	color:#5c5c5c;
+	padding:5px 55px 5px 65px;
+	text-align:center;
+	border-width:2px;
+	border-style: solid;
+}
+div#content select {
+  font-size: 16px;
+  height: 48px;
+  padding: 5px 25px;
+  text-align: right;
+  width: 380px;
+}
+div#content input[type="text"] {
+	letter-spacing: 2px;
+}
+.container.PIN form.MTN div.payment-gateways ul li, .container.TopUp form.MTN div.payment-gateways ul li, .container.WiMax form.MTN div.payment-gateways ul li {
+ 	border:2px solid #FFBD00;
+}
+.container.PIN form.MTN input, .container.TopUp form.MTN input, .container.WiMax form.MTN input {
+	border-color: #f5b51f!important;
+}
+.container.PIN form.MTN input[type="submit"], .container.TopUp form.MTN input[type="submit"], .container.WiMax form.MTN input[type="submit"] {
+  background-color: #FCE348 !important;
+}
+.container.PIN form.MTN input[type="submit"]:hover, .container.TopUp form.MTN input[type="submit"]:hover, .container.WiMax form.MTN input[type="submit"]:hover {
+	background-color: #F5B51F!important;
+}
+.container.PIN form.MCI input, .container.TopUp form.MCI input, .container.WiMax form.MCI input {
+	border-color: #6AC3CB!important;
+}
+.container.PIN form.MCI input[type="submit"], .container.TopUp form.MCI input[type="submit"], .container.WiMax form.MCI input[type="submit"] {
+	background-color: #8BCFD7!important;
+}
+.container.PIN form.MCI input[type="submit"]:hover, .container.TopUp form.MCI input[type="submit"]:hover, .container.WiMax form.MCI input[type="submit"]:hover {
+	background-color: #6AC3CB!important;
+}
+.container.PIN form.RTL input, .container.TopUp form.RTL input {
+	border-color: #C5449F!important;
+}
+.container.PIN form.RTL input[type="submit"], .container.TopUp form.RTL input[type="submit"] {
+	background-color: #D293BE!important;
+}
+.container.PIN form.RTL input[type="submit"]:hover, .container.TopUp form.RTL input[type="submit"]:hover {
+	background-color: #C5449F!important;
+}
+.container.PIN form.TAL input {
+	border-color: #DE002A!important;
+}
+.container.PIN form.TAL input[type="submit"] {
+	background-color: #EC6F6F!important;
+}
+.container.PIN form.TAL input[type="submit"]:hover {
+	background-color: #DE002A!important;
+}
+#EmailInput {
+	letter-spacing: 1px !important;
+	padding: 5px 20px 5px 50px !important;
+	width: 310px !important;
+}
+div#content input:hover{
+	color:#000000;
+}
+div#content input:focus{
+	color:#000000;
+}
+input#dataAccountTemp, input#cellphone{
+	background:url(../img/mobile.png) no-repeat #3e7aac;
+	background-position: 13px 14px;
+	text-align: left !important;
+	direction: ltr;
+}
+input#cellphone {
+	text-align:center !important;
+	letter-spacing:0 !important;
+}
+input#dataAccountTemp:hover, input#cellphone:hover {
+ 	background-image:url(../img/mobile-h.png);
+ }
+input#dataAccountTemp:focus, input#cellphone:focus{
+	background-image:url(../img/mobile-f.png);
+}
+input#EmailInput, input#email{
+ 	background:url(../img/email.png) no-repeat #3e7aac;
+ 	background-position: 13px 14px;
+ 	font-size: 140% !important;
+ }
+div#content select#dataAmountTemp {
+	direction: ltr;
+	width:339px;
+	height:48px;
+	border: 1px solid #D6D4D5;
+	color:#5C5C5C;
+	border-radius:10px;
+	padding:5px 20px 5px 60px;
+	margin:8px;
+	box-shadow: rgba(0, 0, 0, 0.298039) 0 0 5px 0 inset;
+	background-image: url(../img/price.png);
+	background-repeat: no-repeat;
+	background-color: #F6F4F5;
+	background-position: 13px 14px;
+	font-family: BYekan,Tahoma;
+	font-size: 160%;
+	text-align: center;
+}
+input#EmailInput , input#email{
+	background:url(../img/email.png) no-repeat #3e7aac;
+	background-position: 13px 14px;
+	font-size: 140% !important;
+}
+input#EmailInput:hover , input#email:hover{
+	background-image:url(../img/email-h.png);
+}
+input#EmailInput:focus , input#email:focus{
+	background-image:url(../img/email-f.png);
+}
+div#content input[type="submit"] , div#content input[type="button"] {
+	width:342px;
+	height:56px;
+	padding:0 45px;
+	margin:7px;
+	background-color: #9aa8c2;
+	border: 2px solid #75839d;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+	font-family: BYekan,Tahoma;
+	font-size:200%;
+	color:#5b5c5c;
+	cursor:pointer;
+}
+div#content input[type="submit"]:hover, div#content input[type="button"]:hover {
+	text-shadow: 1px 2px 2px #ffffff;
+	background-color: #75839d;
+}
+.submit input:hover {
+	text-shadow: 1px 2px 2px #ffffff;
+}
+div#content div#MagicCharge {
+	box-shadow: 0px 0px 0px #000000;
+	border-radius:0px;
+	text-align:right;
+	color: #5B5C5C;
+	font-family: BKoodakBold,Tahoma;
+	font-size:100%;
+	height:auto;
+	margin: 8px auto;
+}
+qtip-content p {
+	font-size: 13px;
+	color:#3f6219;
+	line-height:20px!important;
+}
+.qtip-content p img {
+	margin-bottom:-5px;
+}
+.bank-qtip {
+	border-width:1px!important;
+}
+.bank-qtip .qtip-content {
+	font-size:11px!important;
+	color:#fff;
+	text-align:center!important;
+	padding:0 5px;
+}
+input#magiccharge, input#NonCreditMTN {
+	border-radius:5px!important;
+	width:10px!important;
+	height:10px!important;
+	padding:10px!important;
+}
+.error-message, .message {
+	background-color: #F2DEDE;
+    border: 1px solid #EED3D7;
+    color: #B94A48;
+    border-radius: 4px;
+    margin: 10px 26px;
+    padding: 4px;
+	font-family: BYekan, tahoma;
+	font-size:13px;
+	text-align: center;
+}
+.conference{
+	direction: rtl;
+	float:right;
+	padding:0 30px;
+	width: 100%;
+}
+.conferences {
+  background: url("../img/icon_user.png") no-repeat scroll 97% 7px #EFEFEF;
+}
+.alert-admin {
+	background: url("../img/icon_admin.png") no-repeat scroll 97% 7px #EFEFEF;
+	background-color: #E5EFFA;
+	border: 1px solid #D3DFEB !important;
+}
+.conference small{
+	float:left;
+	margin-left:10px;
+}
+.conference span {
+	font-size: 100%;
+	font-family: BYekan,tahoma;
+	line-height: 20px;
+}
+.conference .transdetail {
+	text-align: right;
+	font-size:16px;
+	font-family: BYekan,tahoma;
+	line-height: 20px;
+	direction: rtl;
+	margin: 20px 10px;
+	padding: 8px;
+	border: 0;
+}
+.conference div textarea {
+	margin-right: 5px;
+    width: 88%;
+	border: 1px solid #E6E6E4;
+	border-radius: 8px;
+	padding: 5px;
+	font-size:13px;
+	font-family: BYekan,tahoma;
+	line-height: 20px;
+}
+.conference .textarea label {
+    vertical-align: top;
+}
+.conference div.input {
+    height: auto;
+}
+.conference div.confDetail {
+    width: 100%;
+	height: 20px;
+}
+.conference div.confBody {
+    font-size: 13px;
+    line-height: 20px;
+    margin: 10px;
+    text-align: right;
+}
+.Conference{
+    float: left;
+    width: 270px;
+	margin: -50px 0 0 15px;
+	position:absolute;
+}
+.Conference .ConferenceBtn {
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:13px;
+    cursor: pointer;
+    height: 33px;
+    width: 115px;
+	background-color: #1a1818;
+	border-radius: 0 0 10px 15px;
+	-moz-border-radius: 0 0 10px 15px;
+    -webkit-border-radius: 0 0 10px 15px;
+    -khtml-border-radius: 0 0 10px 15px;
+}
+.Conference .ConferenceBtn span {
+  background: url("../img/info.png") no-repeat scroll 98% 59% transparent;
+  color: #FFFFFF;
+  display: block;
+  margin-right: 9px;
+  padding: 9px 19px;
+  text-align: right;
+}
+
+.Conference .ConferenceContent {
+    background-color: #1a1818;
+    border-radius: 0 0 5px 0;
+    color: #FFFFFF;
+    display: none;
+    padding: 10px;
+    position: relative;
+    width: 250px;
+    z-index: 2000;
+	height: 183px;
+}
+.Conference input {
+    height: 22px;
+    width: 230px;
+	font-family: BYekan,tahoma;
+	font-size: 18px;
+	padding: 4px 6px;
+	text-align: left;
+	margin-top: 5px;
+}
+.Conference label{
+	font-size:13px;
+	color:#FFF;
+	font-family: BYekan,tahoma;
+	line-height: 20px;
+	float: right;
+}
+.cnsubmit {
+	padding-top: 5px;
+}
+.cnsubmit input, .cnsubmit button {
+    height: 36px;
+    width: 70px;
+	padding: 0;
+	font-family: BYekan,tahoma;
+	font-size: 18px;
+	text-align: center;
+}
+.banksubmits {
+  margin: 20px auto;
+  width: 250px;
+  font-family: BYekan,tahoma;
+  font-size: 13px;
+  text-align: center;
+}
+.banksubmits input{
+	background-image:url("../img/load.gif");
+	background-repeat: no-repeat;
+	background-position: 270px 15px;
+    direction: rtl;
+    text-align: right !important;
+    width: 300px !important;
+}
+}
+.input, .text{
+	width:100%;
+	clear:right;
+	margin: -4px 0;
+}
+.alert {
+	direction: rtl;
+	margin: 20px 10px;
+	padding: 8px;
+	border-radius: 10px;
+	font-family: BYekan,tahoma;
+	border: 1px solid #E6E6E4;
+}
+.menu {
+	float: left;
+	margin: -80px 0 0 30px;
+	position: relative;
+}
+.menu span{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:13px;
+    cursor: pointer;
+	padding: 4px 30px 9px 16px;
+	margin-right:20px;
+	background-color: #87B43F;
+	display: inline-block;
+	width: auto;
+	color: #FFFFFF;
+	text-align: center;
+	border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    -khtml-border-radius: 0 0 10px 10px;
+}
+.menu span a {
+	color: #ffffff;
+	text-decoration: none;
+}
+span.support {
+    background: url("../img/support.png") no-repeat scroll 90% #87B43F;
+}
+span.help {
+    background: url("../img/help.png") no-repeat scroll 90% #098A97;
+}
+span.help:hover {
+    background-color: #47B7C0;
+}
+.qtip {
+	border-width: 3px;
+}
+.qtip-content {
+	font-family: BYekan, tahoma;
+	font-size: 13px;
+	line-height: 2;
+	direction: rtl;
+	text-align: justify !important;
+}
+.nav-menu .qtip-content {
+	font-size:17px!important;
+}
+.qtip-content p {
+  color: #3f6219;
+  font-size: 13px;
+  line-height: 20px !important;
+}
+div.addScript {
+	position: relative;
+	left: 91%;
+	top: 1px;
+}
+.addScript {
+	margin: 0px;
+	width: 0px;
+}
+.addScript p {
+	margin: 0px;
+	width: 0px;
+}
+.addScript p>a>img {	
+	width: 0px;
+	height: 0px;
+}
+.addScript a>img {
+	margin-top: 3px;
+}
+div #desc h1, div #desc p{
+	font-size: 13px;
+	font-weight: normal;
+	font-family: BYekan,tahoma;
+	line-height: 20px;
+	margin: 5px 2px 5px 22px;
+	color: #FFFFFF;
+	text-align: center;
+	text-shadow: 0px 2px 1px #BBBABA;
+}
+div #desc h1 {
+	font-size: 16px;
+}
+form label.alert{
+	display: block;
+    padding: 20px;
+	border: none;
+}
+div .loading{
+	display: none;
+}
+div.payment-gateways {
+	text-align:right;
+	padding:5px 60px;
+	display:inline-block;
+	width:348px;
+}
+div.input {
+	padding:0px 45px;
+}
+div.payment-gateways ul li {
+	border:2px solid #75839d;
+}
+.container.PIN form.MTN div.payment-gateways ul li, .container.TopUp form.MTN div.payment-gateways ul li, .container.WiMax form.MTN div.payment-gateways ul li {
+	border-color:#FFBD00!important;
+}
+.container.PIN form.MCI div.payment-gateways ul li, .container.TopUp form.MCI div.payment-gateways ul li {
+	border-color:#3bb3c4!important;
+}
+.container.PIN form.RTL div.payment-gateways ul li, .container.TopUp form.RTL div.payment-gateways ul li {
+	border-color:#C5449F!important;
+}
+.container.PIN form.TAL div.payment-gateways ul li{
+	border-color:#DE002A!important;
+}
+div .loading{
+	display: none;
+}
+div.input {
+	padding:0 45px;
+}
+div.payment-gateways {
+  display: inline-block;
+  padding: 8px 80px;
+  text-align: right;
+  width: 366px;
+}
+div.payment-gateways p {
+	text-align:right;
+}
+div.payment-gateways p i{
+	font-style:normal;
+	margin: 0 5px;
+}
+div.payment-gateways p{
+	padding-bottom:10px;
+}
+div.payment-gateways ul {
+	width:335px;
+	margin:0 auto;
+	padding:0;
+}
+div.payment-gateways li {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+div.payment-gateways li {
+	border-radius:3px;
+	border:2px solid #B9B9B9;
+	display:none;
+	margin:0px 4x;
+	background-color:#FFFFFF;
+	background-image:url(../img/payment-gateways.png);
+	background-repeat:no-repeat;
+	font-family:Tahoma;
+	font-size:0px;
+	width:45px;
+	height:45px;
+	cursor:pointer;
+}
+div.payment-gateways li.active {
+	border:2px solid #C44E06 !important;
+}
+div.payment-gateways li.active{
+	background-color:#FCE4A1;
+}
+div.payment-gateways li.bank-Parsian {background-position:0px -45px;}
+div.payment-gateways li.bank-Mellat {background-position:-45px -45px;}
+div.payment-gateways li.bank-Saman {background-position:-90px -45px;}
+div.payment-gateways li.bank-Melli {background-position:-135px -45px;}
+div.payment-gateways li.bank-Fanava {background-position:-180px -45px;}
+div.payment-gateways li.bank-Zarinpal {background-position:-225px -45px;}
+/* Active */
+div.payment-gateways li.active.bank-Parsian {background-position:0 0;}
+div.payment-gateways li.active.bank-Mellat {background-position:-45px 0;}
+div.payment-gateways li.active.bank-Saman {background-position:-90px 0;}
+div.payment-gateways li.active.bank-Melli {background-position:-135px 0;}
+div.payment-gateways li.active.bank-Fanava {background-position:-180px 0;}
+div.payment-gateways li.active.bank-Zarinpal {background-position:-225px 0;}
+div.Magiccharge, div.NonCreditMTN {
+	text-align: right;
+	padding: 0 80px 2px;
+	display:none;
+}
+#AmountTopUpMTNTemp {
+	display:none;
+}
+div.container.TopUp form.MTN #AmountTopUpMTNTemp, div.container.WiMax form.WiMax #AmountTopUpMTNTemp {
+	display:block!important;
+}
+div.container.TopUp form.MTN #AmountTemp , div.container.WiMax form.WiMax #AmountTemp {
+	display:none!important;
+}
+div.container.TopUp form.MTN div.Magiccharge, div.container.TopUp form.MTN div.NonCreditMTN {
+	display:block!important;
+}
+
+div.container.WiMax form.WiMax #AmountTopUpMTNTemp {
+	display:block!important;
+}
+div.container.WiMax form.WiMax #AmountTemp {
+	display:none!important;
+}
+.amount {
+  float: right;
+  padding: 14px 75px 4px !important;
+  width: 375px;
+}
+form div.submit input {
+	border-radius:3px;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+form.MTN div.submit input {
+	background-color:#FFBD00;
+	border:1px solid #F5B51F;
+}
+.show {
+	display: block !important;
+}
+.hide{
+	display: none !important;
+}
+
+div.container.TopUp div.counter, div.container.WiMax div.counter {
+	display:none!important;
+}
+div.container.PIN div.counter {
+	display:block!important;
+}
+div.container div.charge, div.container div.Bill {
+	display:none;
+}
+div.container.TopUp div.charge, div.container.PIN div.charge, div.container.WiMax div.charge {
+	display:block!important;
+}
+div.container.Bill div.Bill {
+	display:block!important;
+}
+
+div.operators.TopUp div.TAL {
+	display:none;
+}
+div.operators.WiMax div.MCI, div.operators.WiMax div.TAL, div.operators.WiMax div.RTL {
+	display:none;
+}
+div.operators.Bill > div, div.operators.TrafficCard > div, div.operators.GiftCard > div, div.operators.Antivirus > div {
+	display:none;
+}
+div.operators.GiftCard > div.MTN, div.operators.GiftCard > div.MCI, div.operators.GiftCard > div.RTL, div.operators.GiftCard > div.TAL {
+	display:none;
+}
+.irs {
+	font-family: 'BYekan', tahoma;
+}
+.irs-max {
+	display:block!important;
+}
+.irs-from, .irs-to, .irs-single {
+	font-size:12px!important;
+	top: -4px!important;
+	left: 16px;
+}
+table {
+	font-size: 13px;
+	font-family: BYekan,tahoma;
+	line-height: 20px;
+	margin: 50px auto;
+	color: #717172;
+	text-align: left:
+}
+td {
+	padding: 5px 15px;
+    border: 1px solid #DDDDDD;
+}
+table > tbody > tr:nth-child(2n) > td, table > tbody > tr:nth-child(2n) > th {
+    background-color: #F2F2F2;
+}
+img.success{
+	width:220px;
+	height:230px;
+	margin:60px 40px 0 0 ;
+}
+a.mainpage {
+	width:342px;
+	height:56px;
+	margin-top:10px;
+	padding:0 45px;
+	background-color:#72809A;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+	font-family: BYekan,Tahoma;
+	color:#F2F3F3;
+	cursor:pointer;
+	padding: 1px 45px;
+    text-decoration: none;
+	font-size:27px;
+	text-align:center;
+	border:2px solid #4E5C76;
+}
+a.mainpage:hover{
+	text-shadow: 1px 2px 2px #000000;
+	
+}
+p.caution {
+	font-size:10px;
+	background: url("../img/caution-small.png") no-repeat scroll right 2px rgba(0, 0, 0, 0);
+	padding:0 18px !important;
+}
+div.container.Bill div.payment-gateways, div.container.Bill div.submit, div.container.GiftCard div.payment-gateways, div.container.GiftCard div.submit, div.container.Antivirus div.payment-gateways, div.container.Antivirus div.submit {
+	display:none;
+}
+div.billId input, div.paymentId input {
+	letter-spacing:0!important;
+}
+div.container.Bill div.verify {
+	display:none;
+}
+table#bill-info {
+	margin:0px auto 5px !important;
+}
+table#bill-info td span {
+	margin:2px;
+}
+table#bill-info td span#type-title {
+	margin:0;
+	height:15px;
+	line-height:18px;
+	display:block;
+}
+table#bill-info td span.bill {
+	width:48px;
+	height:48px;
+	display:block;
+	margin:0 auto;
+}
+table#bill-info td span.bill.water {
+	background: url("../img/bill-operators.png") no-repeat 0 0;
+}
+table#bill-info td span.bill.electricity {
+	background: url("../img/bill-operators.png") no-repeat -48px 0;
+}
+table#bill-info td span.bill.gas {
+	background: url("../img/bill-operators.png") no-repeat -96px 0;
+}
+table#bill-info td span.bill.telephone {
+	background: url("../img/bill-operators.png") no-repeat -144px 0;
+}
+table#bill-info td span.bill.cellphone {
+	background: url("../img/bill-operators.png") no-repeat -192px 0;
+}
+table#bill-info td span.bill.mayoralty {
+	background: url("../img/bill-operators.png") no-repeat -240px 0;
+}
+table#bill-info td span.bill.police {
+	background: url("../img/bill-operators.png") no-repeat -288px 0;
+}
+.container.GiftCard > .GiftCard.operators, .TrafficCard.operators, .Bill.operators, .Antivirus.operators {
+	width:0;
+}
+.container .GiftCard {
+	display:none;
+}
+.container.TopUp .GiftCard, .container.PIN .GiftCard, .container.WiMax .GiftCard, .container.Bill .GiftCard, .container.Antivirus .GiftCard, .container.TrafficCard .GiftCard {
+	display:none;
+}
+.container.GiftCard .GiftCard {
+	display:block;
+}
+.container.GiftCard .info {
+	padding:0 64px;
+	font-family: BYekan,Tahoma;
+	font-size:13px;
+	color:#292A2D;
+}
+.container.GiftCard .info div {
+	float:right;
+	display:inline-block;
+}
+.container.GiftCard .info .title {
+	font-size:17px;
+	margin-top:10px;
+}
+.container.GiftCard .info .description {
+	width:245px;
+	text-align:right;
+}
+.container.GiftCard .info .operator.GiftCard {
+	width:120px;
+	height:67px;
+	background-size:200% 400%!important;
+	cursor:default;
+}
+.container.GiftCard .GiftCard .buy {
+	display:none;
+}
+fieldset  .GiftCard .operators {
+  margin: 10px 37px;
+  width: 452px;
+}
+.GiftCard.operator {
+	width:210px;
+	height:117px;
+	margin:8px;
+	cursor:pointer;
+}
+.GiftCard .operators .operator:hover {
+   -webkit-transform: scale(1.1, 1.1);
+   -moz-transform: scale(1.1, 1.1);
+   -ms-transform: scale(1.1, 1.1);
+   -o-transform: scale(1.1, 1.1);
+   transform: scale(1.1, 1.1)
+}
+.operator.GooglePlay {
+	background:url("../img/gift-cards.png") no-repeat -210px 0;
+}
+.operator.Microsoft {
+	background:url("../img/gift-cards.png") no-repeat 0 0;
+}
+.operator.iTunes {
+	background:url("../img/gift-cards.png") no-repeat -210px -117px;
+}
+.operator.Amazon {
+	background:url("../img/gift-cards.png") no-repeat 0 -117px;
+}
+.operator.XBox {
+	background:url("../img/gift-cards.png") no-repeat -210px -233px;
+}
+.operator.PlayStation {
+	background:url("../img/gift-cards.png") no-repeat 0 -234px;
+}
+.operator.PlayStationPlus {
+	background:url("../img/gift-cards.png") no-repeat -210px -351px;
+}
+.container.GiftCard .info .GiftCard.operator.GooglePlay {
+	background:url("../img/gift-cards.png") no-repeat -120px 0;
+}
+.container.GiftCard .info .GiftCard.operator.Microsoft {
+	background:url("../img/gift-cards.png") no-repeat 0 0;
+}
+.container.GiftCard .info .GiftCard.operator.iTunes {
+	background:url("../img/gift-cards.png") no-repeat -120px -67px;
+}
+.container.GiftCard .info .GiftCard.operator.Amazon {
+	background:url("../img/gift-cards.png") no-repeat 0 -67px;
+}
+.container.GiftCard .info .GiftCard.operator.XBox {
+	background:url("../img/gift-cards.png") no-repeat -120px -134px;
+}
+.container.GiftCard .info .GiftCard.operator.PlayStation {
+	background:url("../img/gift-cards.png") no-repeat 0 -134px;
+}
+.container.GiftCard .info .GiftCard.operator.PlayStationPlus {
+	background:url("../img/gift-cards.png") no-repeat -120px -200px;
+}
+.back-button {
+  background-color: #fac382;
+  border: 1px solid #f7941d;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 3px;
+  position: absolute;
+}
+.container.TopUp .TrafficCard, .container.PIN .TrafficCard, .container.WiMax .TrafficCard, .container.Bill .TrafficCard, .container.Antivirus .TrafficCard, .container.GiftCard .TrafficCard {
+	display:none;
+}
+.container.TrafficCard .TrafficCard {
+	display:block;
+}
+.container.TrafficCard .TrafficCard .caution.description {
+	font-size: 13px;
+	margin: 0 30px;
+	text-align: right;
+	padding-left: 0!important;
+}
+.container.TrafficCard #logo-container, .container.GiftCard #logo-container, .container.Antivirus #logo-container {
+	margin-top:140px;
+}
+.amount-container {
+  background-color: #f5f6f6;
+  border: 1px solid #e6e6e7;
+  border-radius: 8px;
+  color: #5c5c5c;
+  float: right;
+  font-family: BYekan;
+  margin: 10px 30px;
+  padding: 0 !important;
+}
+.count {
+  float: right;
+  padding: 14px 30px 4px 13px !important;
+  width: 175px;
+}
+.amount-container span {
+  display: block;
+  float: right;
+}
+.amount-container .amount-title {
+  background-color: #ECEDEF;
+  border-radius: 0 8px 8px 0;
+  padding: 5px 8px;
+}
+.amount-container .amount-value {
+  display: inline-block;
+  width: 75px;
+  padding: 2px 5px;
+  text-align: left;
+  font-weight:bold;
+  font-size:17px!important;
+}
+.amount-container .amount-unit {
+  font-size: 13px;
+  line-height: 24px;
+  padding: 4px 0 0 6px;
+}
+.container.TopUp .Antivirus, .container.PIN .Antivirus, .container.WiMax .Antivirus, .container.Bill .Antivirus, .container.GiftCard .Antivirus, .container.TrafficCard .Antivirus {
+	display:none;
+}
+.service-caution {
+  background: url("../img/caution.png") no-repeat scroll center 4px rgba(0, 0, 0, 0);
+  font-size: 19px;
+  line-height: 30px;
+  margin: 140px 50px;
+  padding-top: 140px;
+  width: 300px;
+}
+.container.Antivirus .Antivirus {
+	display:block;
+}
+
+.container.Antivirus .info {
+	padding:10px 68px;
+	font-family: BYekan,Tahoma;
+	font-size:13px;
+	color:#292A2D;
+}
+.container.Antivirus .info div {
+	float:right;
+	display:inline-block;
+}
+.container.Antivirus .info .title {
+	font-size:17px;
+	margin-top:10px;
+}
+.container.Antivirus .info .description {
+	width:245px;
+	text-align:right;
+}
+.container.Antivirus .info .operator.Antivirus {
+  background-size: 100% 400% !important;
+  cursor: default;
+  height: 55px;
+  width: 120px;
+}
+.container.Antivirus .Antivirus .buy {
+	display:none;
+}
+fieldset .operators.Antivirus {
+  margin: 0 106px !important;
+}
+.Antivirus.operator {
+  border: 1px solid #e0dedf;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 110px;
+  margin: 5px;
+  width: 300px;
+}
+.Antivirus .operators .operator:hover {
+   -webkit-transform: scale(1.1, 1.1);
+   -moz-transform: scale(1.1, 1.1);
+   -ms-transform: scale(1.1, 1.1);
+   -o-transform: scale(1.1, 1.1);
+   transform: scale(1.1, 1.1)
+}
+.operator.Eset {
+	background:url("../img/antivirus.jpg") no-repeat 0 -1px;
+}
+.operator.BitDefender {
+	background:url("../img/antivirus.jpg") no-repeat 0 -111px;
+}
+.operator.Kaspersky {
+	background:url("../img/antivirus.jpg") no-repeat 0 -223px;
+}
+.operator.Norton {
+	background:url("../img/antivirus.jpg") no-repeat 0 -334px;
+}
+.container.Antivirus .info .Antivirus.operator.Eset {
+	background:url("../img/antivirus.jpg") no-repeat 0 -1px;
+}
+.container.Antivirus .info .Antivirus.operator.BitDefender {
+	background:url("../img/antivirus.jpg") no-repeat 0 -55px;
+}
+.container.Antivirus .info .Antivirus.operator.Kaspersky {
+	background:url("../img/antivirus.jpg") no-repeat 0 -110px;
+}
+.container.Antivirus .info .Antivirus.operator.Norton {
+	background:url("../img/antivirus.jpg") no-repeat 0 -165px ;
+}
+.back-button {
+  background-color: #fac382;
+  border: 1px solid #f7941d;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 3px;
+  position: absolute;
+}
+div#payment-process {
+	display:none;
+}
+.cover {
+  background-color: black;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display:none;
+}
+div.connecting {
+  background-color: #ffffff;
+  border: 2px solid #727272;
+  border-radius: 10px;
+  color: #222222;
+  display: none;
+  font-family: BYekan,Tahoma;
+  height: 85px;
+  opacity: 1;
+  position: fixed;
+  width: 190px;
+  z-index: 14801;
+}
+.connecting > p {
+  background: url("../img/load.gif") no-repeat scroll right center rgba(0, 0, 0, 0);
+  margin-right: 25px;
+  margin-top: 32px;
+  padding-right: 25px;
+} 
+div.verify div.Bill {
+	display:block!important;
+}
+div.verify table#bill-info {
+  margin: 10px auto !important;
+}
+table.no-style td {
+  background-color: unset!important;
+  border: none;
+  padding: 3px;
+}
+#content span {
+    font-family: 'BYekan',tahoma;
+    font-size: 13px;
+}
+div.verify div#left div#description p {
+	width:280px!important;
+}
+div.container.verify {
+	padding: 30px 0;
+	margin-top: 80px;
+}
+div.verify table {
+	margin:25px auto!important;
+}
+.ltr {
+	direction:ltr;
+}
+div.verify div#left {
+  bottom: 70px !important;
+}
+.notify {
+  display:none;
+  background: none repeat scroll 0 0 rgb(228, 34, 61);
+  border: 2px solid rgb(250, 41, 37);
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
+  color: rgb(246, 244, 245);
+  font-size: 14px;
+  height: 60px;
+  line-height: 20px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  z-index: 2;
+}
+.notify:after {
+  border-color: #fa2925 transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  content: "";
+  height: 0;
+  left: 90px;
+  position: absolute;
+  top: 82px;
+  width: 0;
+}
+.notify p {
+	color:#F6F4F5;
+}
+img.application {
+	margin: 20px;
+}
+.bgs.application .container {
+	display:block!important;
+	width:640px!important;
+	margin-top: 80px;
+	position: relative;
+}
+.bgs.application .container div#left {
+  bottom: 0 !important;
+  float: left;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.bgs.application #content {
+	text-align:right!important;
+	font-family: BYekan,tahoma;
+	font-size:13px!important;
+	color:#717172;
+	text-align:justify!important;
+	margin:15px 0!important;
+}
+.bgs.application #content li {
+	margin-right: 30px;
+}
+.bgs.application #content div.submit input {
+    font-family: BYekan,Tahoma!important;
+    font-size: 26px!important;
+	margin:10px 85px!important;
+	cursor:pointer;
+}
+a.application {
+	bottom: 0;
+	position: fixed;
+	right: 0;
+	height: 150px;
+}
+.qr {
+  background-color: #fff;
+  border: 1px solid #e3e1e2;
+  border-radius: 8px;
+  color: #1b4986;
+  margin: 0 50px 30px;
+  opacity: 0.85;
+}
+.bgs.application .qr .description {
+  float: right;
+  font-family: "BYekan";
+  font-size: 13px;
+  font-weight: normal;
+  margin: 12px;
+  width: 355px;
+}
+.qr .description > p {
+  color: #1b4986;
+  margin-bottom:5px;
+}
+.bgs.application .qr .qrcode {
+  float: left;
+  height: 90px;
+  margin: 10px;
+  width: 90px;
+}
+.bgs.application .application-deactive {
+  background-color: #f2dede;
+  border: 1px solid #eed3d7;
+  border-radius: 8px;
+  color: #b94a48;
+  display: none;
+  font-family: BYekan,tahoma;
+  font-size: 17px;
+  margin: 30px 40px 20px 0;
+  padding: 14px;
+  text-align: center;
+}
+.bgs.application  #logo {
+	cursor:default;
+}
+#logo > span {
+  color: #fff;
+  font-family: byekan;
+  font-size: 11px;
+  position: absolute;
+  right: 62px;
+  top: 138px;
+  cursor:default;
+}
+.application-logo {
+  height: 12px;
+  position: absolute;
+  right: 48px;
+  top: 141px;
+  width: 12px;
+}
+.failed a.mainpage {
+	margin-right: 75px;
+}
+div #description h1, div #description p{
+	font-size: 13px;
+	font-weight: normal;
+	font-family: BYekan,tahoma;
+	line-height: 20px;
+	margin: 5px 10px 5px 40px;
+	color: #717172;
+	text-align: center;
+	text-shadow: 0px 2px 1px #BBBABA;
+	width: 250px;
+}
+div #description h1 {
+	font-size: 16px;
+	color:#717172;
+}
+div.failed {
+	margin: 40px;
+}
+div.failed .logo {
+	width:128px;
+	height:128px;
+	background: url("../img/warning.png") no-repeat 0 0;
+	float: right;
+	margin-top: 30px;
+}
+div.failed .explanation {
+	float: right;
+	margin: 45px 2px;
+	width: 320px;
+}
+div.failed .explanation p {
+	font-size: 13px;
+	margin: 10px;
+}
+div.failed .explanation h1, div.failed .explanation h2 {
+	color:#717172;
+}
+.bgs.result {
+	margin-top:-1px!important;
+}
+.bgs.result .menu {
+	margin-top: -80px;
+}
+.bgs.result .container {
+	margin-top: 79px;
+}
+.bgs.result div#content {
+	width:100%;
+}
+
+.product-menu {
+  height: 51px;
+  margin-top: 80px;
+}
+.product-menu ul {
+	list-style-type: none;
+    width:530px;
+	margin:0px auto;
+}
+.product-menu ul li {
+	float:right;
+    width:10px;
+	height:73px;
+    cursor: pointer;
+}
+.product-menu ul li .nav_pic{
+	margin-top:33px;
+}
+.product-menu ul li.nav {
+	float:right;
+	background-color:white;
+	border:1px solid #242F42;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	 cursor:pointer;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+.product-menu ul li.nav:hover {
+	-ms-transform: scale(1.4,1.4); /* IE 9 */
+	-webkit-transform: scale(1.4,1.4); /* Chrome, Safari, Opera */
+	transform: scale(1.4,1.4);
+}
+.product-menu ul li.nav{
+	height:67px;
+    width:67px;
+}
+.product-menu ul li.nav img{
+	width:60px;
+	height:60px;
+}
+.product-menu ul .navbar{
+	background-image: url("../img/pic_main.png");
+	background-repeat: no-repeat;
+	background-position:1px 34px;
+    width:9px;
+}
+.product-menu ul .navbar_right{
+	background-image: url("../img/pic_right.png");
+	background-repeat: no-repeat;
+	background-position:-2px 34px;
+	/* width:20px; */
+	width:18px;
+}
+.product-menu ul .navbar_left{
+	background-image: url("../img/pic_left.png");
+	background-repeat: no-repeat;
+	background-position:1px 34px;
+	width:20px;
+}}
+.nav.services{
+	width: 62px;
+	height: 62px;
+}
+.services.TopUp {
+	background: url("../img/products.jpg") no-repeat -367px 0px #FEFFFF ;
+}
+.services.TopUp.active {
+	background: url("../img/products.jpg") no-repeat -366px -61px #FEFFFF;
+}
+.services.TopUp:hover {
+	background: url("../img/products.jpg") no-repeat -366px -61px #FEFFFF;
+}
+.services.PIN {
+	background: url("../img/products.jpg") no-repeat -305px 0 #FEFFFF;
+}
+.services.PIN.active {
+	background: url("../img/products.jpg") no-repeat  -305px -59px #FEFFFF;
+}
+.services.PIN:hover {
+	background: url("../img/products.jpg") no-repeat -310px -61px #FEFFFF;
+}
+.services.WiMax {
+	background: url("../img/products.jpg") no-repeat -244px 0 #FEFFFF;
+}
+.services.WiMax.active {
+	background: url("../img/products.jpg") no-repeat -243px -56px #FEFFFF;
+}
+.services.WiMax:hover {
+	background: url("../img/products.jpg") no-repeat -243px -56px #FEFFFF;
+}
+.services.Bill {
+	background: url("../img/products.jpg") no-repeat -183px 1px #FEFFFF;
+}
+.services.Bill.active {
+	background: url("../img/products.jpg") no-repeat -181px -57px #FEFFFF;
+}
+.services.Bill:hover {
+	background: url("../img/products.jpg") no-repeat -181px -57px #FEFFFF;
+}
+.services.GiftCard {
+	background: url("../img/products.jpg") no-repeat -120px 1px #FEFFFF;
+}
+.services.GiftCard.active {
+	background: url("../img/products.jpg") no-repeat -120px -58px #FEFFFF;
+}
+.services.GiftCard:hover {
+	background: url("../img/products.jpg") no-repeat -120px -58px #FEFFFF;
+}
+.services.TrafficCard {
+	background: url("../img/products.jpg") no-repeat -62px 0 #FEFFFF;
+}
+.services.TrafficCard.active {
+	background: url("../img/products.jpg") no-repeat -62px -61px #FEFFFF;
+}
+.services.TrafficCard:hover {
+	background: url("../img/products.jpg") no-repeat -62px -61px #FEFFFF;
+}
+.services.Antivirus {
+	background: url("../img/products.jpg") no-repeat 5px 1px  #FEFFFF;
+}
+.services.Antivirus.active {
+	background: url("../img/products.jpg") no-repeat  0 -58px #FEFFFF;
+}
+.services.Antivirus:hover {
+	background: url("../img/products.jpg") no-repeat 0 -59px #FEFFFF;
+}
+.services:hover {
+	z-index:10;
+}
+.services.active{
+	-ms-transform: scale(1.2,1.2); /* IE 9 */
+    -webkit-transform: scale(1.2,1.2); /* Chrome, Safari, Opera */
+    transform: scale(1.2,1.2);
+	border:2px solid #C44E06  !important;
+}
+.warn{
+	background: url(../img/caution-small.png) no-repeat scroll right 2px rgba(0,0,0,0);
+	padding: 0 18px!important;
+    color: #717172;
+    font-size: 13px;
+    text-shadow: 0 2px 1px #bbbaba;
+    margin-right:25px;
+    text-align:justify;
+}
+div.save-information{
+    text-align: right;
+    padding: 0 80px 2px; 
+}
+div#content div#save-information{
+	box-shadow: 0px 0px 0px #000000;
+	border-radius:0px;
+	text-align:right;
+	color: #5B5C5C;
+	font-family: BKoodakBold,Tahoma;
+	font-size:100%;
+	height:auto;
+	margin: 8px auto;
+}
+div#content input#save-information{
+	border-radius:5px;
+	width:10px;
+	height:10px;
+	padding:10px;
+}
