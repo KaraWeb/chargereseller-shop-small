@@ -305,7 +305,7 @@ jQuery(document).ready(function ($) {
 				
 				if (emailCheck && jQuery.inArray(cellphone, ['093', '090', '091', '0921', '0932']) == -1) {
 					if (cellphone.length == 11 && !isNaN(cellphone)) {
-						if (jQuery.inArray(cellphone.substr(0, 3), ['090', '091', '092', '093']) == -1) {
+						if (jQuery.inArray(cellphone.substr(0, 3), ['090', '091', '092', '093', '099']) == -1) {
 							cellphoneCheck = false;
 						} else {
 							cellphoneCheck = true;
@@ -650,7 +650,7 @@ jQuery(document).ready(function ($) {
 			
 			if (cellphone.length > 0) {
 				if (cellphone.length == 11 && !isNaN(cellphone)) {
-					if (jQuery.inArray(cellphone.substr(0, 3), ['090', '091', '092', '093']) == -1) {
+					if (jQuery.inArray(cellphone.substr(0, 3), ['090', '091', '092', '093', '099']) == -1) {
 						cellphoneCheck = false;
 					} else {
 						cellphoneCheck = true;
