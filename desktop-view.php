@@ -1,22 +1,20 @@
 <?php include 'config.php'; ?>
-<!-- small -->
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="<?php echo $config['description']; ?>" />
-	<meta name="keywords" content="<?php echo $config['keywords']; ?>" />
-	<link type="image/x-icon" rel="icon" href="css/favicon.ico"/>
-	<link rel="stylesheet" type="text/css" href="css/jquery.qtip.css" />
-	<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.css" />
-	<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.skinNice.css" />
-	<link rel="stylesheet" type="text/css" href="css/help.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<title><?php echo $config['title']; ?></title>
-	
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="<?php echo $config['description']; ?>" />
+		<meta name="keywords" content="<?php echo $config['keywords']; ?>" />
+		<link type="image/x-icon" rel="icon" href="css/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.qtip.css" />
+		<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.css" />
+		<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.skinNice.css" />
+		<link rel="stylesheet" type="text/css" href="css/help.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title><?php echo $config['title']; ?></title>
+		
+	</head>
 <body>
-	
 	<div class="bgs">
 		<div class="menu">
 			<span class="support">پشتیبانی</span>
@@ -91,10 +89,10 @@
 						<div class="Bill">
 							<div class="check">
 								<div class="input text required billId">
-									<input id="BillId" class="input-large" type="text" placeholder="شناسه قبض" value="" maxlength="13" name="data[BillId]">
+									<input id="BillId" class="input-large" type="text" placeholder="شناسه قبض" value="" maxlength="13" name="data[billId]">
 								</div>
 								<div class="input text required paymentId">
-									<input id="PaymentId" class="input-large" type="text" placeholder="شناسه پرداخت" value="" maxlength="13" name="data[PaymentId]">
+									<input id="PaymentId" class="input-large" type="text" placeholder="شناسه پرداخت" value="" maxlength="13" name="data[paymentId]">
 								</div>
 								<div class="input text email">
 									<input id="EmailInput" class="input-large" type="email" maxlength="50" value="" title="آدرس ایمیل را به شکل صحیح بنویسید!" rel="tooltip" placeholder="you@domain.com">
@@ -238,17 +236,20 @@
 							</ul>
 							<p class="caution">خرید با کلیه کارت های بانکی عضو شبکه شتاب امکان پذیر می باشد.</p>
 						</div>
-						<input type="hidden" id="dataWebserviceId" name="data[WebserviceId]">
-						<input type="hidden" id="dataRedirectUrl" name="data[RedirectUrl]" value="<?php echo $root . '/verify.php'; ?>">
+						<input type="hidden" id="dataWebserviceId" name="data[webserviceId]">
+						<input type="hidden" id="dataRedirectUrl" name="data[redirectUrl]" value="<?php echo $root . '/verify.php'; ?>">
 						<input type="hidden" id="dataChargeKind" name="data[ChargeKind]">
-						<input type="hidden" id="dataCellphone" name="data[Cellphone]">
-						<input type="hidden" id="dataAmount" name="data[Amount]">
-						<input type="hidden" id="dataCount" name="data[Count]">
-						<input type="hidden" id="dataEmail" name="data[Email]">
-						<input type="hidden" id="dataType" name="data[Type]">
-						<input type="hidden" id="dataIssuer" name="data[Issuer]">
-						<input type="hidden" id="dataRedirectToPage" name="data[RedirectToPage]" value="true">
-						<input type="hidden" id="dataRedirectToPage" name="data[ScriptVersion]" value="4.2">
+						<input type="hidden" id="dataCellphone" name="data[cellphone]">
+						<input type="hidden" id="dataAmount" name="data[amount]">
+						<input type="hidden" id="dataCount" name="data[count]">
+						<input type="hidden" id="dataEmail" name="data[email]">
+						<input type="hidden" id="dataType" name="data[type]">
+						<input type="hidden" id="dataProductId" name="data[productId]">
+						<input type="hidden" id="dataIssuer" name="data[issuer]">
+						<input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
+						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.0">
+						<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
+						<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
 					</fieldset>
 					<div class="submit">
 						<input type="submit" value="پــرداخــت">
