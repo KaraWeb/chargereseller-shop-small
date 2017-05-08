@@ -5,8 +5,8 @@ jQuery(document).ready(function ($) {
 	var paymentGateways = null;
 	var paymentGatewayStatus = {'Bill' : false, 'GiftCard' : false, 'Antivirus' : false};
 	var DefaultOperatorPhone = '';
-	var Kinds = ["TopUp", "PIN", "WiMax", "Bill", "GiftCard", "Antivirus"];
-	var KindTitle = ["شارژ مستقیم", "کارت شارژ", "شارژ وایمکس ایرانسل", "پرداخت قبض", "گیفت کارت", "آنتی ویروس"];
+	var Kinds = ["TopUp", "PIN", "WiMax", "Bill", "GiftCard", "TrafficCard", "Antivirus"];
+	var KindTitle = ["شارژ مستقیم", "کارت شارژ", "شارژ وایمکس ایرانسل", "پرداخت قبض", "گیفت کارت", "طرح ترافیک", "آنتی ویروس"];
 	var KindDescription = 
 	[
 		'در این سامانه شارژ بصورت تاپ آپ عرضه می گردد و پس ازطی مراحل خرید، سیم کارت شما بصورت خودکار شارژ شده و نیازی به ثبت پین یا رمز شارژ نمی باشد.'
@@ -145,13 +145,16 @@ jQuery(document).ready(function ($) {
 		e.preventDefault();
 		var action = '';
 		if (DefaultChargeKind == 'TopUp') {
-			action = 'Topup';
+			action = 'topup';
 		} else if (DefaultChargeKind == 'WiMax') {
-			action = 'Topup';
+			action = 'topup';
 		} else if (DefaultChargeKind == 'Bill') {
-			action = 'Bill';
+			action = 'bill';
+		} else if (DefaultChargeKind == 'PIN') {
+			action = 'buyProduct';
+			$('#dataProductId').val('CC-' + $('#dataType').val() + '-' + $('#dataAmount').val());
 		} else {
-			action = 'BuyProduct';
+			action = 'buyProduct';
 		}
 		
 		checkForm();
@@ -161,7 +164,7 @@ jQuery(document).ready(function ($) {
 			$('.connecting').attr('style', 'top:' + ($(window).height() - $('div.connecting').height()) / 2 + 'px; right:' + ($(window).width() - $('div.connecting').width()) / 2 + 'px; display:block!important;');
 			$.ajax({
 				type: 'POST',
-				url: 'https://chr724.ir/services/EasyCharge/' + action,
+				url: 'https://chr724.ir/services/v3/EasyCharge/' + action,
 				data: $('form#chargeform').serialize(),
 				async: false,
 				contentType: "application/json",
@@ -187,70 +190,10 @@ jQuery(document).ready(function ($) {
 	});
 	
 	function doProccess(data) {
-		if (data.data.Status == 100) {
-			if (data.data.IsDirect != true) {
-				$.ajax({
-					type: 'GET',
-					url: data.data.PaymentGatewayUrl,
-					contentType: "application/json",
-					dataType: 'jsonp',
-					success: function(data) {
-						$("#payment-process").html('');
-						$("#payment-process").append('<form action="' + data.Params.address + '" method="POST">');
-						$.each(data.Params.params, function(key, value) {
-							$("#payment-process form").append('<input type="text" name="' + key + '" value="' + value + '"/>');
-						});
-						$("#payment-process form").append('<input type="submit" value="submit"/>');
-						$("#payment-process form").submit();
-					},
-					error: function(e) {
-						$('.cover').fadeOut();
-						$('.connecting').fadeOut();
-						dialogue("در حال حاضر امکان برقرار ارتباط با بانک وجود ندارد. (خطا: " + e.status + ")<br>لطفاً بعداً مراجعه نمایید.", "خطا");
-						// console.log(e);
-					}
-				});
-			} else {
-				window.location.replace(data.data.PaymentGatewayUrl);
-			}
+		if (data.status == 'Success') {
+			window.location.replace(data.paymentInfo.url);
 		} else {
-			switch(data.data.Status) {
-				case -11:
-					dialogue("خطای شماره 11: اطلاعات ارسال شده ناقص است.", "خطا");
-					break;
-				case -15: 
-					dialogue("خطای شماره 15: این قبض قبلا پرداخت شده است.", "خطا");
-					break;
-				case -22:
-					dialogue("خطای شماره 22: اطلاعات احراز هویت صحیح نمی باشد.", "خطا");
-					break;
-				case -44:
-					dialogue("خطای شماره 44: درحال حاضر این محصول موجود نیست.", "خطا");
-					break;
-				case -55:
-					dialogue("خطای شماره 55: روش پرداخت انتخاب شده موجود نیست.", "خطا");
-					break;
-				case -66:
-					dialogue("خطای شماره 68: اپراتور شارژ مستقیم ایرانسل موقتاً در دسترس نمی باشد، لطفاً کارت شارژ خرید نمایید.", "خطا");
-					break;
-				case -67:
-					dialogue("خطای شماره 68: اپراتور شارژ مستقیم همراه اول موقتاً در دسترس نمی باشد، لطفاً کارت شارژ خرید نمایید.", "خطا");
-					break;
-				case -68: 
-					dialogue("خطای شماره 68: اپراتور شارژ مستقیم رایتل موقتاً در دسترس نمی باشد، لطفاً کارت شارژ خرید نمایید.", "خطا");
-					break;
-				case -97:
-					dialogue("خطای شماره 97: مشکل در ارتباط با بانک رخ داده است.", "خطا");
-					break;
-				case -98:
-					dialogue("خطای شماره 98: خطا در ویرایش تراکنش اولیه رخ داده است.", "خطا");
-					break;
-				case -99:
-					dialogue("خطای شماره 99: خطا در ثبت تراکنش اولیه رخ داده است.", "خطا");
-					break;
-				default:
-					dialogue("خطای شماره " + data.data.Status, "خطا");
-			} 
+			dialogue(data.errorMessage, "خطا");
 			$('.cover').fadeOut();
 			$('.connecting').fadeOut();
 		}
@@ -827,7 +770,7 @@ jQuery(document).ready(function ($) {
 	
 	$('div.operator.GiftCard').click(function() {
 		$('div.GiftCard div.giftcard-types > select').attr('id', 'GiftCard' + $(this).data('type') + 'Types');
-		setProducts('GiftCard', $(this).data('type'));
+		setProducts('giftCard', $(this).data('type'));
 		$('div#content div.GiftCard div.info div#operator').removeClass().addClass('operator GiftCard ' + $(this).data('type'));
 		$('div#content div.GiftCard div.info div.title').text("گیفت کارت " + GiftCardKindTitle[GiftCardKinds.indexOf($(this).data('type'))]);
 		$('div#content div.GiftCard div.info div.description').text(GiftCardKindDescription[GiftCardKinds.indexOf($(this).data('type'))]);
@@ -841,6 +784,7 @@ jQuery(document).ready(function ($) {
 	
 	$('div.GiftCard div.giftcard-types select').change(function() {
 		$('.container.GiftCard .GiftCard input#UnitAmount').val($(this).find(':selected').data('price'));
+		$('#dataProductId').val($(this).find(':selected').val());
 	});
 	
 	$('div.back-button').click(function() {
@@ -853,7 +797,7 @@ jQuery(document).ready(function ($) {
 	
 	$('div.operator.Antivirus').click(function() {
 		$('div.Antivirus div.antivirus-types > select').attr('id', 'Antivirus' + $(this).data('type') + 'Types');
-		setProducts('Antivirus', $(this).data('type'));
+		setProducts('antivirus', $(this).data('type'));
 		$('div#content div.Antivirus div.info div#operator').removeClass().addClass('operator Antivirus ' + $(this).data('type'));
 		$('div#content div.Antivirus div.info div.title').text("آنتی ویروس " + AntivirusKindTitle[AntivirusKinds.indexOf($(this).data('type'))]);
 		$('div#content div.Antivirus div.info div.description').text(GiftCardKindDescription[GiftCardKinds.indexOf($(this).data('type'))]);
@@ -867,10 +811,12 @@ jQuery(document).ready(function ($) {
 	
 	$('div.Antivirus div.antivirus-types select').change(function() {
 		$('.container.Antivirus .Antivirus input#UnitAmount').val($(this).find(':selected').data('price'));
+		$('#dataProductId').val($(this).find(':selected').val());
 	});
 	
 	$('div.TrafficCard select#TrafficCardTypes').change(function() {
 		$('.container.TrafficCard .TrafficCard input#UnitAmount').val($(this).find(':selected').data('price'));
+		$('#dataProductId').val($(this).find(':selected').val());
 	});
 	
 	$( "input.cellphone" ).blur(function() {
@@ -904,26 +850,29 @@ jQuery(document).ready(function ($) {
 		} else {
 			var jsonData = products[group];
 		}
-		$('select#' + group + subGroup + 'Types').find('option').remove();
+		
+		groupPascalCase = group.charAt(0).toUpperCase() + group.slice(1);
+		$('select#' + groupPascalCase + subGroup + 'Types').find('option').remove();
 		$.each(jsonData, function(key, val) {
-			$('select#' + group + subGroup + 'Types').append(
-				$('<option data-price="' + val.Product.price + '"></option>').val(val.Product.plan_name).html(val.Product.name)
+			$('select#' + groupPascalCase + subGroup + 'Types').append(
+				$('<option data-price="' + val.price + '"></option>').val(val.id).html(val.name)
 			);
 		});
-		$('.container.' + group + ' .' + group + ' input#UnitAmount').val(jsonData[0].Product.price);
+		$('.container.' + groupPascalCase + ' .' + groupPascalCase + ' input#UnitAmount').val(jsonData[0].price);
+		$('#dataProductId').val(jsonData[0].id);
 	}
 	
 	$.ajax({
 		type: 'GET',
-		url: "https://chr724.ir/services/EasyCharge/ProductsInfo",
+		url: "https://chr724.ir/services/v3/EasyCharge/initializeData",
 		data: "{}",
 		async: false,
 		contentType: "application/json",
 		dataType: 'jsonp',
 		crossDomain: true,
 		success: function(data) {
-			products = data.InitializeData.Products;
-			paymentGateways = data.InitializeData.PaymentGateways;
+			products = data.products;
+			paymentGateways = data.paymentGateways;
 			initailize();
 		},
 		error: function(e) {
@@ -945,13 +894,13 @@ jQuery(document).ready(function ($) {
 		
 		$('div#content div.payment-gateways ul').attr('style', 'width:' + paymentGateways.length * 55 + 'px;');
 		
-		$.each(products.GiftCard, function(key, val) {
+		$.each(products.giftCard, function(key, val) {
 			if (val == '' || val == null) {
 				$('.operator.GiftCard.' + key).hide();
 			}
 		});	
 		
-		$.each(products.Antivirus, function(key, val) {
+		$.each(products.antivirus, function(key, val) {
 			if (val == '' || val == null) {
 				$('.operator.Antivirus.' + key).hide();
 			}
