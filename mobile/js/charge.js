@@ -194,7 +194,13 @@ jQuery(document).ready(function ($) {
 	
 	function doProccess(data) {
 		if (data.status == 'Success') {
-			window.location.replace(data.paymentInfo.url);
+			if ($('#dataIssuer').val() == 'Zarinpal') {
+				Zarinak.setAuthority(data.paymentInfo.paymentGateway.authority);
+				Zarinak.open();
+				$('.connecting p').text('لطفاً صبر کنید ...');
+			} else {
+				window.location.replace(data.paymentInfo.url);
+			}
 		} else {
 			dialogue(data.errorMessage, "خطا");
 			$('.cover').fadeOut();

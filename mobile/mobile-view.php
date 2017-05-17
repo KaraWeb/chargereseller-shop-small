@@ -366,6 +366,7 @@
                             <input type="hidden" id="dataType" name="data[type]">
 							<input type="hidden" id="dataProductId" name="data[productId]">
                             <input type="hidden" id="dataIssuer" name="data[issuer]">
+							<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
                             <input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
                             <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.0">
 							<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
@@ -391,6 +392,7 @@
 	<script type="text/javascript" src="mobile/js/jquery.qtip.min.js"></script>
 	<script type="text/javascript" src="mobile/js/charge.js"></script>
     <script type="text/javascript" src="mobile/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	<script type="text/javascript">var WebserviceID = <?php echo '"' . $config['webserviceID'] . '"'; ?>;</script>
 </body>
 </html>
