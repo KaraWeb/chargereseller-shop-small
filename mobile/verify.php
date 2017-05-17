@@ -99,6 +99,42 @@
                             </div>
                         </div>
                 <?php
+                    } elseif ($transactionType == 'IN') {
+                ?>
+                        <div id="content">
+                            <div>
+                                <div class="InternetPackage"></div>
+                                <div>بسته اینترنت</div>
+                            </div>
+                            <table>
+                                <tbody>
+									<tr>
+										<td>تاریخ</td>
+										<td><?php echo $result['date']; ?></td>
+									</tr>
+									<tr>
+										<td>نام بسته</td>
+										<td class="mw-200"><?php echo $result['products']['name']; ?></td>
+									</tr>
+									<tr>
+										<td>مبلغ بسته</td>
+										<td><?php echo $result['products']['price'] . ' تومان'; ?></td>
+									</tr>
+									<tr>
+										<td>شماره تلفن همراه</td>
+										<td><?php echo $result['products']['details']['cellphone']; ?></td>
+									</tr>
+									<tr>
+										<td>کد پیگیری</td>
+										<td><?php echo $result['refId']; ?></td>
+									</tr>
+                                </tbody>
+                            </table>
+                            <div class="return">
+                                <a class="mainpage" href="<?php echo str_replace('mobile', '', $root); ?>"><div class="return-mainpage"></div>صفحه اصلی فروشگاه</a>
+                            </div>
+                        </div>
+                <?php
                     } elseif (in_array($transactionType, ['CC', 'GC', 'AN', 'TC'])) {
                         $pinProductDescription = array(
                             'CC' => 'اکنون با وارد کردن کد شارژ از طریق صفحه کلید گوشی، تلفن همراه خود را شارژ نمایید.',
