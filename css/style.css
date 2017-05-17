@@ -144,7 +144,7 @@ div#content{
 .container.verify div#content {
 	float:none;
 }
-.container.Bill div#content, .container.GiftCard div#content, .container.TrafficCard div#content, .container.Antivirus div#content {
+.container.Bill div#content, .container.GiftCard div#content, .container.TrafficCard div#content, .container.Antivirus div#content, .container.InternetPackage div#content {
 	width: auto;
 	float: none;
 }
@@ -168,7 +168,7 @@ div#content select {
   height: 48px;
   padding: 5px 25px;
   text-align: right;
-  width: 380px;
+  width: 384px;
 }
 div#content input[type="text"] {
 	letter-spacing: 2px;
@@ -742,7 +742,7 @@ div.operators.TopUp div.TAL {
 div.operators.WiMax div.MCI, div.operators.WiMax div.TAL, div.operators.WiMax div.RTL {
 	display:none;
 }
-div.operators.Bill > div, div.operators.TrafficCard > div, div.operators.GiftCard > div, div.operators.Antivirus > div {
+div.operators.Bill > div, div.operators.TrafficCard > div, div.operators.GiftCard > div, div.operators.Antivirus > div, div.operators.InternetPackage > div {
 	display:none;
 }
 div.operators.GiftCard > div.MTN, div.operators.GiftCard > div.MCI, div.operators.GiftCard > div.RTL, div.operators.GiftCard > div.TAL {
@@ -855,13 +855,13 @@ table#bill-info td span.bill.mayoralty {
 table#bill-info td span.bill.police {
 	background: url("../img/bill-operators.png") no-repeat -288px 0;
 }
-.container.GiftCard > .GiftCard.operators, .TrafficCard.operators, .Bill.operators, .Antivirus.operators {
+.container.GiftCard > .GiftCard.operators, .TrafficCard.operators, .Bill.operators, .Antivirus.operators, .InternetPackage.operators {
 	width:0;
 }
 .container .GiftCard {
 	display:none;
 }
-.container.TopUp .GiftCard, .container.PIN .GiftCard, .container.WiMax .GiftCard, .container.Bill .GiftCard, .container.Antivirus .GiftCard, .container.TrafficCard .GiftCard {
+.container.TopUp .GiftCard, .container.PIN .GiftCard, .container.WiMax .GiftCard, .container.Bill .GiftCard, .container.Antivirus .GiftCard, .container.TrafficCard .GiftCard, .container.InternetPackage .GiftCard {
 	display:none;
 }
 .container.GiftCard .GiftCard {
@@ -954,13 +954,15 @@ fieldset  .GiftCard .operators {
 	background:url("../img/gift-cards.png") no-repeat -120px -200px;
 }
 .back-button {
-  background-color: #fac382;
-  border: 1px solid #f7941d;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  padding: 0 3px;
-  position: absolute;
+	background-color: #fac382;
+	border: 1px solid #f7941d;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	padding: 0 3px;
+	position: absolute;
+	float: right;
+	display: inline-block;
 }
 .container.TopUp .TrafficCard, .container.PIN .TrafficCard, .container.WiMax .TrafficCard, .container.Bill .TrafficCard, .container.Antivirus .TrafficCard, .container.GiftCard .TrafficCard {
 	display:none;
@@ -1014,7 +1016,7 @@ fieldset  .GiftCard .operators {
   line-height: 24px;
   padding: 4px 0 0 6px;
 }
-.container.TopUp .Antivirus, .container.PIN .Antivirus, .container.WiMax .Antivirus, .container.Bill .Antivirus, .container.GiftCard .Antivirus, .container.TrafficCard .Antivirus {
+.container.TopUp .Antivirus, .container.PIN .Antivirus, .container.WiMax .Antivirus, .container.Bill .Antivirus, .container.GiftCard .Antivirus, .container.TrafficCard .Antivirus, .container.InternetPackage .Antivirus {
 	display:none;
 }
 .service-caution {
@@ -1358,7 +1360,7 @@ div.failed .explanation h1, div.failed .explanation h2 {
 }
 .product-menu ul {
 	list-style-type: none;
-    width:530px;
+    width:565px;
 	margin:0px auto;
 }
 .product-menu ul li {
@@ -1373,8 +1375,8 @@ div.failed .explanation h1, div.failed .explanation h2 {
 .product-menu ul li.nav {
 	float:right;
 	background-color:white;
-	border:1px solid #242F42;
 	border-radius:5px;
+	border:1px solid #242F42;
 	-webkit-border-radius:5px;
 	 cursor:pointer;
 	-webkit-transition: all .3s ease-in-out;
@@ -1383,13 +1385,13 @@ div.failed .explanation h1, div.failed .explanation h2 {
 	transition: all .3s ease-in-out;
 }
 .product-menu ul li.nav:hover {
-	-ms-transform: scale(1.4,1.4); /* IE 9 */
-	-webkit-transform: scale(1.4,1.4); /* Chrome, Safari, Opera */
-	transform: scale(1.4,1.4);
+	-ms-transform: scale(1.3, 1.3); /* IE 9 */
+	-webkit-transform: scale(1.3, 1.3); /* Chrome, Safari, Opera */
+	transform: scale(1.3, 1.3);
 }
 .product-menu ul li.nav{
-	height:67px;
-    width:67px;
+	height:63px;
+    width:63px;
 }
 .product-menu ul li.nav img{
 	width:60px;
@@ -1399,69 +1401,77 @@ div.failed .explanation h1, div.failed .explanation h2 {
 	background-image: url("../img/pic_main.png");
 	background-repeat: no-repeat;
 	background-position:1px 34px;
-    width:9px;
+    width:6px;
 }
 .product-menu ul .navbar_right{
 	background-image: url("../img/pic_right.png");
 	background-repeat: no-repeat;
 	background-position:-2px 34px;
-	/* width:20px; */
-	width:18px;
+	width:16px;
 }
 .product-menu ul .navbar_left{
 	background-image: url("../img/pic_left.png");
 	background-repeat: no-repeat;
 	background-position:1px 34px;
-	width:20px;
+	width:16px;
 }}
 .nav.services{
 	width: 62px;
 	height: 62px;
 }
 .services.TopUp {
-	background: url("../img/products.jpg") no-repeat -367px 0px #FEFFFF ;
+	background: url("../img/products.jpg") no-repeat -434px 0px #FEFFFF ;
 }
 .services.TopUp.active {
-	background: url("../img/products.jpg") no-repeat -366px -61px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -434px -61px #FEFFFF;
 }
 .services.TopUp:hover {
-	background: url("../img/products.jpg") no-repeat -366px -61px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -434px -61px #FEFFFF;
 }
 .services.PIN {
-	background: url("../img/products.jpg") no-repeat -305px 0 #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -372px 0 #FEFFFF;
 }
 .services.PIN.active {
-	background: url("../img/products.jpg") no-repeat  -305px -59px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat  -372px -59px #FEFFFF;
 }
 .services.PIN:hover {
+	background: url("../img/products.jpg") no-repeat -372px -61px #FEFFFF;
+}
+.services.InternetPackage {
+	background: url("../img/products.jpg") no-repeat -310px 0 #FEFFFF;
+}
+.services.InternetPackage.active {
+	background: url("../img/products.jpg") no-repeat  -310px -59px #FEFFFF;
+}
+.services.InternetPackage:hover {
 	background: url("../img/products.jpg") no-repeat -310px -61px #FEFFFF;
 }
 .services.WiMax {
-	background: url("../img/products.jpg") no-repeat -244px 0 #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -248px 0 #FEFFFF;
 }
 .services.WiMax.active {
-	background: url("../img/products.jpg") no-repeat -243px -56px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -248px -56px #FEFFFF;
 }
 .services.WiMax:hover {
-	background: url("../img/products.jpg") no-repeat -243px -56px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -248px -56px #FEFFFF;
 }
 .services.Bill {
-	background: url("../img/products.jpg") no-repeat -183px 1px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -186px 0px #FEFFFF;
 }
 .services.Bill.active {
-	background: url("../img/products.jpg") no-repeat -181px -57px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -186px -57px #FEFFFF;
 }
 .services.Bill:hover {
-	background: url("../img/products.jpg") no-repeat -181px -57px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -186px -57px #FEFFFF;
 }
 .services.GiftCard {
-	background: url("../img/products.jpg") no-repeat -120px 1px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -124px 0px #FEFFFF;
 }
 .services.GiftCard.active {
-	background: url("../img/products.jpg") no-repeat -120px -58px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -124px -58px #FEFFFF;
 }
 .services.GiftCard:hover {
-	background: url("../img/products.jpg") no-repeat -120px -58px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat -124px -58px #FEFFFF;
 }
 .services.TrafficCard {
 	background: url("../img/products.jpg") no-repeat -62px 0 #FEFFFF;
@@ -1473,21 +1483,21 @@ div.failed .explanation h1, div.failed .explanation h2 {
 	background: url("../img/products.jpg") no-repeat -62px -61px #FEFFFF;
 }
 .services.Antivirus {
-	background: url("../img/products.jpg") no-repeat 5px 1px  #FEFFFF;
+	background: url("../img/products.jpg") no-repeat 0 0  #FEFFFF;
 }
 .services.Antivirus.active {
 	background: url("../img/products.jpg") no-repeat  0 -58px #FEFFFF;
 }
 .services.Antivirus:hover {
-	background: url("../img/products.jpg") no-repeat 0 -59px #FEFFFF;
+	background: url("../img/products.jpg") no-repeat 0 -58px #FEFFFF;
 }
 .services:hover {
 	z-index:10;
 }
 .services.active{
-	-ms-transform: scale(1.2,1.2); /* IE 9 */
-    -webkit-transform: scale(1.2,1.2); /* Chrome, Safari, Opera */
-    transform: scale(1.2,1.2);
+	-ms-transform: scale(1.15, 1.15); /* IE 9 */
+    -webkit-transform: scale(1.15, 1.15); /* Chrome, Safari, Opera */
+    transform: scale(1.15, 1.15);
 	border:2px solid #C44E06  !important;
 }
 .warn{
@@ -1518,4 +1528,141 @@ div#content input#save-information{
 	width:10px;
 	height:10px;
 	padding:10px;
+}
+
+/* InternetPackage */
+    .container.InternetPackage .InternetPackage {
+        display:block;
+    }
+    .container.InternetPackage .info .title {
+        font-size:17px;
+        margin-top:10px;
+		float: right;
+		display: inline-block;
+    }
+    .container.InternetPackage .info .description {
+        width:245px;
+        text-align:right;
+		float: right;
+		display: inline-block;
+    }
+    .container.InternetPackage .info .operator.InternetPackage {
+        width:120px;
+        height:67px;
+        background-size:200% 400%!important;
+        cursor:default;
+    }
+    .container.InternetPackage .info {
+        padding:10px 68px;
+        font-family: BYekan,Tahoma;
+        font-size:13px;
+        color:#292A2D;
+    }
+    .container.InternetPackage .InternetPackage .buy {
+        display:none;
+    }
+	fieldset  .InternetPackage .operators {
+	  margin: 10px 66px;
+	  width: 392px;
+	}
+    .InternetPackage.operator {
+        width:180px;
+        height:100px;
+        margin:8px;
+        cursor:pointer;
+		float:right;
+    }
+    .InternetPackage .operators .operator:hover {
+       -webkit-transform: scale(1.1, 1.1);
+       -moz-transform: scale(1.1, 1.1);
+       -ms-transform: scale(1.1, 1.1);
+       -o-transform: scale(1.1, 1.1);
+       transform: scale(1.1, 1.1)
+    }
+     .operator.IN-MTN-Hourly {
+        background: url("../img/internet-package.png") no-repeat scroll -180px 0px;
+    }
+    .operator.IN-MTN-Daily {
+        background: url("../img/internet-package.png") no-repeat scroll 0px 0px;
+    }
+    .operator.IN-MTN-Weekly {
+        background: url("../img/internet-package.png") no-repeat scroll -180px -100px;
+    }
+    .operator.IN-MTN-Monthly {
+        background: url("../img/internet-package.png") no-repeat scroll 0px -100px;
+    }
+    .operator.IN-MTN-Amazing {
+        background: url("../img/internet-package.png") no-repeat scroll -180px -200px;
+    }
+    .operator.IN-MTN-TDLTE {
+        background: url("../img/internet-package.png") no-repeat scroll 0px -200px;
+    }
+    .container.InternetPackage .info .InternetPackage.operator.IN-MTN-Hourly {
+         background: url("../img/internet-package.png") no-repeat scroll -120px 0px;
+    }
+    .container.InternetPackage .info .InternetPackage.operator.IN-MTN-Daily {
+        background: url("../img/internet-package.png") no-repeat scroll 0px 0px;
+    }
+    .container.InternetPackage .info .InternetPackage.operator.IN-MTN-Weekly {
+        background: url("../img/internet-package.png") no-repeat scroll -120px -67px;
+    }
+    .container.InternetPackage .info .InternetPackage.operator.IN-MTN-Monthly {
+        background: url("../img/internet-package.png") no-repeat scroll 0px -67px;
+    }
+    .container.InternetPackage .info .InternetPackage.operator.IN-MTN-Amazing {
+        background: url("../img/internet-package.png") no-repeat scroll -120px -135px;
+    }
+    .container.InternetPackage .info .InternetPackage.operator.IN-MTN-TDLTE {
+        background: url("../img/internet-package.png") no-repeat scroll 0px -135px;
+    }
+	.container.InternetPackage .InternetPackage .buy .amount-container {
+		margin: 10px 26px;
+		width: 382px;
+	}
+	.container.InternetPackage .InternetPackage .buy .amount-title {
+		height: 26px;
+		padding-top: 8px;
+	}
+	.container.InternetPackage .InternetPackage .buy .amount-value {
+		height: 26px;
+		padding-top: 4px;
+	}
+	.container.InternetPackage .InternetPackage .buy .amount-unit {
+		height: 26px;
+		padding-top: 7px;
+	}
+	.container.InternetPackage .InternetPackage .buy .amount-title {
+		padding-top: 7px;
+	}
+	.container.InternetPackage .info .description {
+        width:245px;
+        text-align:right;
+    }
+    .container.InternetPackage .info .title {
+        font-size: 17px;
+        margin-top: 10px;
+    }
+    .container.InternetPackage .info .operator.InternetPackage {
+        width:120px;
+        height:67px;
+        background-size:200% 300%!important;
+        cursor:default;
+    }
+	.container.TopUp .InternetPackage, .container.PIN .InternetPackage, .container.WiMax .InternetPackage, .container.Bill .InternetPackage, .container.GiftCard .InternetPackage, .container.Antivirus .InternetPackage, .container.TrafficCard .InternetPackage {
+		display:none;
+	}
+	.sim-type-container {
+		margin: 10px;
+	}
+	.sim-type-container label:not(:last-child) {
+		margin-left: 20px;
+	}
+/* End InternetPackage */
+
+input[type="radio"] {
+	width:auto !important;
+	height:auto !important;
+}
+.mw-200 {
+	max-width: 200px;
 }

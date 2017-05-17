@@ -27,6 +27,8 @@
 				<li class="navbar"> </li>
 				<li class="nav services PIN" alt="nav2" data-type="PIN" data-tooltip="کارت شارژ"></li>
 				<li class="navbar"></li>
+				<li class="nav services InternetPackage" alt="nav2" data-type="InternetPackage" data-tooltip="بسته اینترنت"></li>
+				<li class="navbar"></li>
 				<li class="nav services WiMax" alt="nav3" data-type="WiMax" data-tooltip="شارژ وایمکس"></li>
 				<li class="navbar" > </li>
 				<li class="nav services Bill" alt="nav4" data-type="Bill" data-tooltip="پرداخت قبض"></li>
@@ -221,6 +223,55 @@
                                 <div class="save-information">
                                     <input type="checkbox" value="1" id="save-information" name="data[save-information]">
                                     <label for="save-information">ذخیره اطلاعات تماس</label> 
+                                </div>
+							</div>
+						</div>
+                        <div class="InternetPackage">
+							<div class="operators">
+								<div data-type="IN-MTN-Hourly"  id="Hourly" class="operator InternetPackage IN-MTN-Hourly"></div>
+                                <div data-type="IN-MTN-Daily"  id="Daily" class="operator InternetPackage IN-MTN-Daily"></div>
+                                <div data-type="IN-MTN-Weekly"  id="Weekly" class="operator InternetPackage IN-MTN-Weekly"></div>
+                                <div data-type="IN-MTN-Monthly"  id="Monthly" class="operator InternetPackage IN-MTN-Monthly"></div>
+                                <div data-type="IN-MTN-Amazing"  id="Amazing" class="operator InternetPackage IN-MTN-Amazing"></div>
+                                <div data-type="IN-MTN-TDLTE"  id="TDLTE" class="operator InternetPackage IN-MTN-TDLTE"></div>
+							</div>
+							<div class="buy">
+								<div class="info">
+                                    <div id="operator"></div>
+									<div class="title"></div>
+									<div class="description"></div>
+									<div class="back-button">بازگشت</div>
+									<div class="clear"></div>
+								</div>
+								<div class="input text required account">
+									<input id="dataAccountTemp" class="input-large cellphone" type="text" value="" placeholder="شماره موبایل" maxlength="11">
+								</div>
+								<div class="input sim-type-container">
+									<label class="radio-inline">
+										<input type="radio" name="sim-type" value="Prepaid" checked="checked">سیم کارت اعتباری
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="sim-type" value="Postpaid">سیم کارت دائمی
+									</label>
+								</div>
+								<div class="input text internetPackage-types">
+									<select id="InternetPackageTypes" class="input-large" name="data[packageId]"></select>
+									<input type="hidden" id="UnitAmount" value="0">
+								</div>
+								<div class="input text">
+									<div class="amount-container">
+										<span class="amount-title">مبلغ</span>
+										<span class="amount-value" id="UnitAmount"></span>
+										<span class="amount-unit">تومان</span>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="input text email">
+									<input id="EmailInput" class="input-large" type="email" maxlength="50" value="" title="آدرس ایمیل را به شکل صحیح بنویسید!" rel="tooltip" placeholder="you@domain.com">
+								</div>
+                                <div class="save-information">
+                                    <input type="checkbox" value="1" id="save-information" name="data[save-information]">
+                                    <label for="save-information">ذخیره اطلاعات تماس </label> 
                                 </div>
 							</div>
 						</div>

@@ -3,14 +3,15 @@ jQuery(document).ready(function ($) {
 	var DefaultOperator = 'MTN';
 	var products = null;
 	var paymentGateways = null;
-	var paymentGatewayStatus = {'Bill' : false, 'GiftCard' : false, 'Antivirus' : false};
+	var paymentGatewayStatus = {'Bill' : false, 'GiftCard' : false, 'Antivirus' : false, 'InternetPackage' : false};
 	var DefaultOperatorPhone = '';
-	var Kinds = ["TopUp", "PIN", "WiMax", "Bill", "GiftCard", "TrafficCard", "Antivirus"];
-	var KindTitle = ["شارژ مستقیم", "کارت شارژ", "شارژ وایمکس ایرانسل", "پرداخت قبض", "گیفت کارت", "طرح ترافیک", "آنتی ویروس"];
+	var Kinds = ["TopUp", "PIN", "InternetPackage", "WiMax", "Bill", "GiftCard", "TrafficCard", "Antivirus"];
+	var KindTitle = ["شارژ مستقیم", "کارت شارژ", "بسته اینترنت", "شارژ وایمکس ایرانسل", "پرداخت قبض", "گیفت کارت", "طرح ترافیک", "آنتی ویروس"];
 	var KindDescription = 
 	[
 		'در این سامانه شارژ بصورت تاپ آپ عرضه می گردد و پس ازطی مراحل خرید، سیم کارت شما بصورت خودکار شارژ شده و نیازی به ثبت پین یا رمز شارژ نمی باشد.'
 		, 'در این نوع پس از طی مراحــل خرید پین و سریال در اختیار شما قرار می گیرد که با وارد کردن پین، گوشی شما شارژ می گردد.'
+		, 'بسته های اینترنت همراه با تنوع زیاد'
 		, 'در این سرویس خطوط وایمکس ایرانسل شارژ می شود.'
 		, 'پرداخت کلیه قبوض خدماتی از جمله آب، برق، گاز، تلفن ثابت، تلفن همراه ، جرائم راهنمایی و رانندگی و عوارض شهرداری'
 		, 'با خرید گیفت کارت می توانید از سرویس هایی همچون خرید نرم افزار، بازی، موسیقی، فیلم، کتاب و ... استفاده نمایید.'
@@ -44,6 +45,14 @@ jQuery(document).ready(function ($) {
 			DefaultOperator = 'WiMax';
 		}
 		
+		if (DefaultChargeKind == 'InternetPackage') {
+			if (DefaultOperator == 'IN-MTN-TDLTE') {
+				DefaultOperatorPhone = '094';
+			} else {
+				DefaultOperatorPhone = '093';
+			}
+		}
+		
 		$(".nav[data-type='" + DefaultChargeKind + "']").addClass('active');
 		
 		$('div#desc h1').text(KindTitle[Kinds.indexOf(DefaultChargeKind)]);
@@ -52,20 +61,9 @@ jQuery(document).ready(function ($) {
 		$('form#chargeform').attr('class', DefaultOperator.replace('!', '').replace('#', ''));
 		$('div.container').attr('class', 'container ' + DefaultChargeKind);
 		$('div.operators').attr('class', 'operators ' + DefaultChargeKind);
-        if (!$.cookie('cellphone')) {
-            $('input#dataAccountTemp').val(DefaultOperatorPhone);
-        } else {
-            if ((DefaultChargeKind == 'TopUp' || DefaultChargeKind == 'WiMax')) {
-                if ($.cookie('cellphone').substring(0, 3) == DefaultOperatorPhone.substring(0, 3)) {
-                    $('input#dataAccountTemp').val($.cookie('cellphone'));
-                } else {
-                    $('input#dataAccountTemp').val(DefaultOperatorPhone);
-                }
-            } else {
-                $('input#dataAccountTemp').val($.cookie('cellphone'));
-            }
-        }
-        $('input#EmailInput').val($.cookie('email'));
+		
+		readCookie(DefaultChargeKind, DefaultOperatorPhone);
+		
 		$('input#dataChargeKind').val(DefaultChargeKind);
 		$('div.input.text.account div.form-control.account span:last-child i').text(DefaultOperatorPhone);
 		$('input#dataType').val(DefaultOperator);
@@ -77,7 +75,7 @@ jQuery(document).ready(function ($) {
 			$('div.operator.'+ DefaultOperator).addClass('active');
 		}
 		
-		if (jQuery.inArray(DefaultChargeKind, ['Bill', 'GiftCard', 'Antivirus']) > -1) {
+		if (jQuery.inArray(DefaultChargeKind, ['Bill', 'GiftCard', 'Antivirus', 'InternetPackage']) > -1) {
 			if (paymentGatewayStatus[DefaultChargeKind] == true) {
 				$('div.container.' + DefaultChargeKind + ' div.payment-gateways').show();
 				$('div.container.' + DefaultChargeKind + ' div.submit').show();
@@ -148,6 +146,8 @@ jQuery(document).ready(function ($) {
 			action = 'topup';
 		} else if (DefaultChargeKind == 'WiMax') {
 			action = 'topup';
+		} else if (DefaultChargeKind == 'InternetPackage') {
+			action = 'internetRecharge';
 		} else if (DefaultChargeKind == 'Bill') {
 			action = 'bill';
 		} else if (DefaultChargeKind == 'PIN') {
@@ -261,6 +261,24 @@ jQuery(document).ready(function ($) {
 			if (cellphone.length == 11 && !isNaN(cellphone)) {
 				if (DefaultOperator == 'WiMax') {
 					if (jQuery.inArray(cellphone.substr(0, 3), ['094']) == -1) {
+						cellphoneCheck = false;
+					}
+				}
+			} else {
+				cellphoneCheck = false;
+			}
+			var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			if (email.length > 0 && !filter.test(email)) {
+				emailCheck = false;
+			}
+		} else if (DefaultChargeKind == 'InternetPackage') {
+			if (cellphone.length == 11 && !isNaN(cellphone)) {
+				if ($('div#content div.InternetPackage div.info div#operator').attr('class').replace("operator InternetPackage ", "") == 'IN-MTN-TDLTE') {
+					if (cellphone.substring(0, 3) != '094') {
+						cellphoneCheck = false;
+					}
+				} else{
+					if (jQuery.inArray(cellphone.substring(0, 3), ['093', '090']) == -1) {
 						cellphoneCheck = false;
 					}
 				}
@@ -592,11 +610,13 @@ jQuery(document).ready(function ($) {
 		$(".nav").removeClass('active');
 		$(this).addClass('active');
 
-		DefaultOperator = 'MTN';
-		$('input#magiccharge').prop('checked', false);
-		$('input#magiccharge').prop('disabled', false);
-		$('input#NonCreditMTN').prop('checked', false);
-		$('input#NonCreditMTN').prop('disabled', false);
+		if (jQuery.inArray(DefaultChargeKind, ['Bill', 'GiftCard', 'Antivirus', 'InternetPackage']) == -1) {
+			DefaultOperator = 'MTN';
+			$('input#magiccharge').prop('checked', false);
+			$('input#magiccharge').prop('disabled', false);
+			$('input#NonCreditMTN').prop('checked', false);
+			$('input#NonCreditMTN').prop('disabled', false);
+		}
 		startup();
 		
 		if (DefaultChargeKind == 'TrafficCard') {
@@ -758,16 +778,6 @@ jQuery(document).ready(function ($) {
 		, "بازی آنلاین"
 	];
 	
-	var AntivirusKinds = ["Eset", "BitDefender", "iTunes", "Amazon"];
-	var AntivirusKindTitle = ["Eset", "BitDefender", "iTunes", "Amazon"];
-	var AntivirusKindDescription = 
-	[
-		"آنتی ویروس قدرتمند Eset",
-		"آنتی ویروس قدرتمند BitDefender",
-		"آنتی ویروس قدرتمند Kaspersky",
-		"آنتی ویروس قدرتمند Norton"
-	];
-	
 	$('div.operator.GiftCard').click(function() {
 		$('div.GiftCard div.giftcard-types > select').attr('id', 'GiftCard' + $(this).data('type') + 'Types');
 		setProducts('giftCard', $(this).data('type'));
@@ -795,6 +805,16 @@ jQuery(document).ready(function ($) {
 		paymentGatewayStatus[DefaultChargeKind] = false;
 	});
 	
+	var AntivirusKinds = ["Eset", "BitDefender", "iTunes", "Amazon"];
+	var AntivirusKindTitle = ["Eset", "BitDefender", "iTunes", "Amazon"];
+	var AntivirusKindDescription = 
+	[
+		"آنتی ویروس قدرتمند Eset",
+		"آنتی ویروس قدرتمند BitDefender",
+		"آنتی ویروس قدرتمند Kaspersky",
+		"آنتی ویروس قدرتمند Norton"
+	];
+	
 	$('div.operator.Antivirus').click(function() {
 		$('div.Antivirus div.antivirus-types > select').attr('id', 'Antivirus' + $(this).data('type') + 'Types');
 		setProducts('antivirus', $(this).data('type'));
@@ -813,6 +833,49 @@ jQuery(document).ready(function ($) {
 		$('.container.Antivirus .Antivirus input#UnitAmount').val($(this).find(':selected').data('price'));
 		$('#dataProductId').val($(this).find(':selected').val());
 	});
+	
+	var InternetPackageKinds = ["IN-MTN-Hourly", "IN-MTN-Daily", "IN-MTN-Weekly", "IN-MTN-Monthly", "IN-MTN-Amazing", "IN-MTN-TDLTE"];
+	var InternetPackageKindTitle = ["اینترنت ایرانسل ساعتی", "اینترنت ایرانسل روزانه", "اینترنت ایرانسل هفتگی", "اینترنت ایرانسل ماهانه", "اینترنت ایرانسل شگفت انگیز", "اینترنت ثابت TDLTE"];
+	var InternetPackageKindDescription = ["اینترنت ایرانسل ساعتی", "اینترنت ایرانسل روزانه", "اینترنت ایرانسل هفتگی", "اینترنت ایرانسل ماهانه", "اینترنت ایرانسل شگفت انگیز", "اینترنت ثابت TDLTE"];
+	
+	$('div.operator.InternetPackage').click(function() {
+		$('div.InternetPackage div.internetPackage-types > select').attr('id', 'InternetPackage' + $(this).data('type') + 'Types');
+		$('input[type=radio][name=sim-type]').prop('checked', false);
+		$('input[type=radio][name=sim-type][value=Prepaid]').prop('checked', true);
+		setInternetPackage("mtn", $(this).data('type'), "Prepaid");
+		$('div#content div.InternetPackage div.info div#operator').removeClass().addClass('operator InternetPackage ' + $(this).data('type'));
+		$('div#content div.InternetPackage div.info div.title').text("بسته اینترنت ایرانسل");
+		$('div#content div.InternetPackage div.info div.description').text(InternetPackageKindDescription[InternetPackageKinds.indexOf($(this).data('type'))]);
+		
+		if ($(this).data('type') == 'IN-MTN-TDLTE') {
+			readCookie('InternetPackage', '094');
+			$('div.container.InternetPackage div.InternetPackage .sim-type-container').hide();
+		} else {
+			readCookie('InternetPackage', '093');
+			$('div.container.InternetPackage div.InternetPackage .sim-type-container').show();
+		}
+		
+		$('div.container.InternetPackage div.InternetPackage div.error-message').remove();
+		$('div.container.InternetPackage div.InternetPackage div.operators').slideUp(500);
+		$('div.container.InternetPackage div.InternetPackage div.buy').slideDown(1500);
+		$('div.container.InternetPackage div.payment-gateways').fadeIn();
+		$('div.container.InternetPackage div.submit').fadeIn();
+		
+		paymentGatewayStatus[DefaultChargeKind] = true;
+	});
+	
+	$('div.InternetPackage div.internetPackage-types select').change(function() {
+		$('.container.InternetPackage .InternetPackage input#UnitAmount').val($(this).find(':selected').data('price'));
+		$('#dataProductId').val($(this).find(':selected').val());
+	});
+	
+    $('input[type=radio][name=sim-type]').change(function() {
+        if (this.value == 'Prepaid') {
+            setInternetPackage("mtn", $('div#content div.InternetPackage div.info div#operator').attr('class').replace("operator InternetPackage ", ""), "Prepaid");
+        } else if (this.value == 'Postpaid') {
+			setInternetPackage("mtn", $('div#content div.InternetPackage div.info div#operator').attr('class').replace("operator InternetPackage ", ""), "Postpaid");
+        }
+    });
 	
 	$('div.TrafficCard select#TrafficCardTypes').change(function() {
 		$('.container.TrafficCard .TrafficCard input#UnitAmount').val($(this).find(':selected').data('price'));
@@ -862,6 +925,51 @@ jQuery(document).ready(function ($) {
 		$('#dataProductId').val(jsonData[0].id);
 	}
 	
+	function setInternetPackage(operator, category, simType) {
+		var internetKeys = ["IN-MTN-Hourly", "IN-MTN-Daily", "IN-MTN-Weekly", "IN-MTN-Monthly", "IN-MTN-Amazing", "IN-MTN-TDLTE"];
+		var internetKeysPersian = ["اینترنت ایرانسل ساعتی", "اینترنت ایرانسل روزانه", "اینترنت ایرانسل هفتگی", "اینترنت ایرانسل ماهانه", "اینترنت ایرانسل شگفت انگیز", "اینترنت ثابت TDLTE"];
+		stringData = JSON.stringify(products);
+		$.each(internetKeys, function(key, val) {
+			stringData = stringData.replace('"' + internetKeysPersian[key] + '"', '"' + val + '"');
+		});
+		var internetPackages = JSON.parse(stringData)["internetPackage"];
+		
+		var jsonData = internetPackages[operator][category];
+		
+		$('select#InternetPackage' + category + 'Types').find('option').remove();
+		
+		var packageNotExists = true;
+		$.each(jsonData, function(key, val) {
+			if (simType == "Prepaid") {
+				if (val["name"].includes("مشترکین دائمی") != true) {
+					packageNotExists = false;
+					$('select#InternetPackage' + category + 'Types').append(
+						$('<option data-price="' + val.price + '"></option>').val(val.id).html(val["name"].replace(internetKeysPersian[internetKeys.indexOf(category)] + " - ", "").replace("(مشترکین اعتباری)", ""))
+					);
+				}
+			} else if (simType == "Postpaid") {
+				if (val["name"].includes("مشترکین دائمی") == true) {
+					packageNotExists = false;
+					$('select#InternetPackage' + category + 'Types').append(
+						$('<option data-price="' + val.price + '"></option>').val(val.id).html(val["name"].replace(internetKeysPersian[internetKeys.indexOf(category)] + " - ", "").replace("(مشترکین دائمی)", ""))
+					);
+				}
+			}
+		});
+		
+		if (packageNotExists == true) {
+			$('select#InternetPackage' + category + 'Types').css({'color':'#E52721'});
+			$('select#InternetPackage' + category + 'Types').append(
+				$('<option data-price="0"></option>').val(0).html("بسته ای در این دسته وجود ندارد.")
+			);
+		} else {
+			$('select#InternetPackage' + category + 'Types').css({'color':'#5c5c5c'});
+		}
+		
+		$('.container.InternetPackage .InternetPackage input#UnitAmount').val($('select#InternetPackage' + category + 'Types').find("option:first-child").data('price'));
+		$('#dataCount').val(1);
+	}
+	
 	$.ajax({
 		type: 'GET',
 		url: "https://chr724.ir/services/v3/EasyCharge/initializeData",
@@ -907,5 +1015,23 @@ jQuery(document).ready(function ($) {
 		});
 		
 		$('.bgs').slideDown(300);
+	}
+
+	function readCookie(service, phonePrefix) {
+		if (!$.cookie('cellphone')) {
+			$('input#dataAccountTemp').val(phonePrefix);
+		} else {
+			if ((service == 'TopUp' || service == 'WiMax' || service == 'InternetPackage')) {
+				if ($.cookie('cellphone').substring(0, 3) == phonePrefix.substring(0, 3)) {
+					$('input#dataAccountTemp').val($.cookie('cellphone'));
+				} else {
+					$('input#dataAccountTemp').val(phonePrefix);
+				}
+			} else {
+				$('input#dataAccountTemp').val($.cookie('cellphone'));
+			}
+		}
+		
+        $('input#EmailInput').val($.cookie('email'));
 	}
 });
