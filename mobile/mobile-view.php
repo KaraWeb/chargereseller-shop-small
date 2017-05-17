@@ -334,12 +334,6 @@
                             </div>
                             <div class="Support">
                                 <div class="phone-support"><p>پشتیبانی تلفنی<br>021-88019574</p></div>
-                                <div class="yahoo-support">
-                                    <a target="_blank" href="#">
-                                        <img border="0" alt="yahoo-online" src="">
-                                        <p class="yahoo">پشتیبانی یاهو <br> chargereseller24</p>
-                                    </a>
-                                </div>
                                 <div class="gmail-support"><p>پشتیبانی گوگل<br>chargereseller24</p></div>
                                 <div class="help-support help"><p>راهنما</p></div>
                                 <div class="desktop-support"><a href="<?php echo str_replace('mobile', '', $root) . '?view=desktop'; ?>"><p>نمای دسکتاپ</p></a></div>

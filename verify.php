@@ -297,7 +297,7 @@
 
 		// By suppling no content attribute, the library uses each elements title attribute by default
 		$('.support').qtip({
-		   content: '<p>پشتیبانی تلفنی: 88019574-021</p><p>پشتیبانی یاهو: <a title="yahoo Status" target="_blank" href="ymsgr:sendim?chargereseller24"><img border="0" src="http://opi.yahoo.com/online?u=chargereseller24&m=g&t=1"></a></p><p>پشتیبانی گوگل: chargereseller24</p>',
+		   content: '<p>پشتیبانی تلفنی: 88019574-021</p><p>پشتیبانی گوگل: chargereseller24</p>',
 			style:
 			{
 				classes: 'qtip-green qtip-rounded qtip-shadow',
