@@ -444,7 +444,7 @@ jQuery(document).ready(function ($) {
 			$('input#dataAmount').val($('select#dataAmountTemp').val());
 			$('.container.PIN div#content div.charge .amount-value').text($('input#dataCount').val() * $('input#dataAmount').val());
 		} else if (DefaultChargeKind == 'WiMax') {
-			$('input#dataAmount').val($('select#dataAmount').val());
+			$('input#dataAmount').val($('select#dataAmountTemp').val());
 		}
 		
 		var divType = DefaultChargeKind;
