@@ -300,7 +300,7 @@
                                 <div id="left">
                                     <div id="logo-container">
                                         <div id="logo">
-                                            <img class="application" alt="mobile-application" src="<?php echo $root; ?>/img/Mobile-Charge-Application-Logo-Small.png">
+                                            <img class="application" alt="mobile-application" src="<?php echo $root; ?>/mobile/img/Mobile-Charge-Application-Logo-Small.png">
                                         </div>
                                     </div>
                                 </div>
