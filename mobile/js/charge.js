@@ -1052,4 +1052,31 @@ jQuery(document).ready(function ($) {
             e.preventDefault();
         }
     });
+	
+    $("input.cellphone").keyup(function (e) {
+		// Convert persian digits to english digits
+		$(this).val(persianDigitsToEnglish($(this).val()));
+	});
+	
+	$("input.cellphone").bind("paste", function(e) {
+		// Convert persian digits to english digits
+		$(this).val(persianDigitsToEnglish(e.originalEvent.clipboardData.getData('text')));
+	});
+	
+	String.prototype.replaceArray = function(find, replace) {
+	  var replaceString = this;
+	  var regex; 
+	  for (var i = 0; i < find.length; i++) {
+		regex = new RegExp(find[i], "g");
+		replaceString = replaceString.replace(regex, replace[i]);
+	  }
+	  return replaceString;
+	};
+	
+	function persianDigitsToEnglish(persianDigits) {
+		var firstPersianArray = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+		var secondPersianArray = ["۰", "۱", "۲", "٣", "٤", "٥", "٦", "٧", "۸", "۹"]; // just 3,4,5,6,7 is different
+		var englishArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+		return persianDigits.replaceArray(firstPersianArray, englishArray).replaceArray(secondPersianArray, englishArray);
+	}
 });
