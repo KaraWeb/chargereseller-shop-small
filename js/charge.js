@@ -21,21 +21,28 @@ jQuery(document).ready(function ($) {
 	
 	function startup() {
 		if (DefaultOperator == 'MTN') {
+			$('label[for=magiccharge]').text('شارژ شگفت انگیز');
+			$('input#magiccharge').prop('disabled', false);
+			$('input#magiccharge').attr('checked', false);
+			$('input#NonCreditMTN').prop('disabled', false);
+			$('input#NonCreditMTN').attr('checked', false);
 			DefaultOperatorPhone = '093';
 			if ($('input#magiccharge').is(':checked')) {
 				DefaultOperator = 'MTN!';
-				$('input#NonCreditMTN').prop('disabled', true);
-				$('input#NonCreditMTN').attr('checked', false);
 			}
 			if ($('input#NonCreditMTN').is(':checked')) {
 				DefaultOperator = 'MTN#';
-				$('input#magiccharge').prop('disabled', true);
-				$('input#magiccharge').attr('checked', false);
 			}
 		} else if (DefaultOperator == 'MCI') {
 			DefaultOperatorPhone = '091';
 		} else if (DefaultOperator == 'RTL') {
+			$('label[for=magiccharge]').text('شارژ شورانگیز');
+			$('input#magiccharge').prop('disabled', false);
+			$('input#magiccharge').attr('checked', false);
 			DefaultOperatorPhone = '092';
+			if ($('input#magiccharge').is(':checked')) {
+				DefaultOperator = 'RTL!';
+			}
 		} else if (DefaultOperator == 'TAL') {
 			DefaultOperatorPhone = '0932';
 		}
@@ -101,6 +108,14 @@ jQuery(document).ready(function ($) {
 			} else {
 				$('input#NonCreditMTN').prop('disabled', false);
 				$('input#dataType').val('MTN');
+			}
+		}
+		
+		if ($('input#dataType').val() == 'RTL' || $('input#dataType').val() == 'RTL!') {
+			if ($(this).is(':checked')) {
+				$('input#dataType').val('RTL!');
+			} else {
+				$('input#dataType').val('RTL');
 			}
 		}
 	});

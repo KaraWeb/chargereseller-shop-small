@@ -566,6 +566,7 @@ div.container.WiMax form.WiMax #AmountTopUpMTNTemp {
 	display: block!important
 }
 
+div.container.TopUp form.RTL div.Magiccharge,
 div.container.TopUp form.MTN div.Magiccharge,
 div.container.TopUp form.MTN div.NonCreditMTN {
 	display: block!important
