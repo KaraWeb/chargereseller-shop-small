@@ -2096,8 +2096,15 @@ p {
 	.container.InternetPackage .info .InternetPackage.operator.IN-MTN-Monthly {
 		background: #ffbd00 url(../img/internet-package.png) no-repeat scroll 0px -27px
 	}
+	.container.InternetPackage .info .InternetPackage.operator.IN-MTN-Amazing {
+		background: #ffbd00 url(../img/internet-package.png) no-repeat scroll -58px -54px
+	}
 	.container.InternetPackage .info .InternetPackage.operator.IN-MTN-TDLTE {
 		background: #ffbd00 url(../img/internet-package.png) no-repeat scroll 0 -54px
+	}
+	
+	.sim-type-container label {
+		display:block;
 	}
 }
 
