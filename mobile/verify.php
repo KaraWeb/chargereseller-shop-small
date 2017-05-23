@@ -19,7 +19,8 @@
 			
             echo '<div class="container verify bgs-content ' . $result['Type'] . '">';
                 if ($result['status'] == 'Success') {
-					$transactionType = explode('-', $result['products']['type'])[0];
+					$transactionType = explode('-', $result['products']['type']);
+					$transactionType = $transactionType[0];
                     if ($transactionType == 'Bill') {
                         $billTypesPersian = array("آب", "بــرق", "گـــاز", "تلفن ثابت", "تلفن همراه", "عوارض شهرداری","","","جریمه راهنمایی و رانندگی");
                         $billTypesEnglish = array("water", "electricity", "gas", "telephone", "cellphone", "mayoralty","","","police");
