@@ -35,8 +35,8 @@
 									<tr>
 										<td>نوع قبض</td>
 										<td>
-											<span id="type" class="bill <?php echo $billTypesEnglish[$result['products']['details']['billType']]; ?>"></span>
-											<span id="type-title"><?php echo $billTypesPersian[$result['products']['details']['billType']]; ?></span>
+											<span id="type" class="bill <?php echo $billTypesEnglish[$result['products']['details']['billType'] - 1]; ?>"></span>
+											<span id="type-title"><?php echo $billTypesPersian[$result['products']['details']['billType'] - 1]; ?></span>
 										</td>
 									</tr>
 									<tr>
