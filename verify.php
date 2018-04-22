@@ -269,7 +269,7 @@
 			content: {
 				text: 'درحال بارگزاری ...',
 				ajax: {
-					url	: "http://chargereseller.com/pages/help",
+					url	: "https://chr724.ir/pages/help",
 					dataType: 'html'
 				},
 				title: {
