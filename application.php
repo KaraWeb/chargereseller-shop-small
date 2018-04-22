@@ -20,7 +20,7 @@
 					<div id="logo">
 						<img class="application" src="<?php echo $root; ?>/img/Mobile-Charge-Application-Logo-Small.png">
 						<span><?php echo substr($config['title'], 0, 20); ?></span>
-						<img class="application-logo" src="http://chargereseller.com/img/mobile_app_logo/default.png">
+						<img class="application-logo" src="https://www.chargereseller.com/img/mobile_app_logo/default.png">
 					</div>
 				</div>
 			</div>
@@ -102,7 +102,7 @@
 		jQuery(document).ready(function ($) {
 			$.ajax({
 				type: 'POST',
-				url: 'http://chargereseller.com/webservices/downloadApplication/android',
+				url: 'https://www.chargereseller.com/webservices/downloadApplication/android',
 				data: {"WebserviceId":<?php echo '"' . $config['webserviceID'] . '"'; ?>},
 				async: false,
 				contentType: "application/json",

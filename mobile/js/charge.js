@@ -965,7 +965,7 @@ jQuery(document).ready(function ($) {
         if (downloadURL == '') {
             $.ajax({
                 type: 'POST',
-                url: 'http://chargereseller.com/webservices/downloadApplication/android',
+                url: 'https://www.chargereseller.com/webservices/downloadApplication/android',
                 data: {"WebserviceId": WebserviceID},
                 async: false,
                 contentType: "application/json",
