@@ -253,29 +253,24 @@
                             </div>
                             <div class="InternetPackage">
                                 <div class="operators">
-									<div data-type="IN-MTN-Hourly"  id="Hourly" class="operator InternetPackage IN-MTN-Hourly"></div>
-									<div data-type="IN-MTN-Daily"  id="Daily" class="operator InternetPackage IN-MTN-Daily"></div>
-									<div data-type="IN-MTN-Weekly"  id="Weekly" class="operator InternetPackage IN-MTN-Weekly"></div>
-									<div data-type="IN-MTN-Monthly"  id="Monthly" class="operator InternetPackage IN-MTN-Monthly"></div>
-									<div data-type="IN-MTN-Amazing"  id="Amazing" class="operator InternetPackage IN-MTN-Amazing"></div>
-									<div data-type="IN-MTN-TDLTE"  id="TDLTE" class="operator InternetPackage IN-MTN-TDLTE"></div>
+
                                 </div>
                                 <div class="buy">
                                     <div class="info">
                                         <div id="operator"></div>
-                                        <div class="back-button">بازگشت</div>
                                     </div>
                                     <div class="input text required account">
                                         <input id="dataAccountTemp" class="input-large cellphone" type="text" value="" placeholder="شماره موبایل" maxlength="11">
                                     </div>
 									<div class="input sim-type-container">
-										<label class="radio-inline">
-											<input type="radio" name="sim-type" value="Prepaid" checked="checked">سیم کارت اعتباری
-										</label>
+
 										<label class="radio-inline">
 											<input type="radio" name="sim-type" value="Postpaid">سیم کارت دائمی
 										</label>
 									</div>
+                                    <div class="input text internetPackage-categories">
+                                        <select id="InternetPackageCategories" class="input-large"></select>
+                                    </div>
                                     <div class="input text internetPackage-types">
                                         <select id="InternetPackageTypes" class="input-large" name="data[packageId]"></select>
                                         <input type="hidden" id="UnitAmount" value="0">
@@ -362,9 +357,9 @@
                             <input type="hidden" id="dataType" name="data[type]">
 							<input type="hidden" id="dataProductId" name="data[productId]">
                             <input type="hidden" id="dataIssuer" name="data[issuer]">
-							<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
+							    <input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
                             <input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-                            <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.0">
+                            <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.1">
 							<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 							<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
                         </fieldset>

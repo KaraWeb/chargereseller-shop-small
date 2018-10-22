@@ -233,16 +233,22 @@ div#content input[type="text"] {
 
 .container.TopUp .MTN,
 .container.PIN .MTN,
+.container.InternetPackage .MTN,
+.container.InternetPackage.MTN,
 .container.WiMax .MTN {
 	background-color: #FFBD00!important
 }
 
 .container.TopUp .MCI,
+.container.InternetPackage .MCI,
+.container.InternetPackage.MCI,
 .container.PIN .MCI {
 	background-color: #52C1DC!important
 }
 
 .container.TopUp .RTL,
+.container.InternetPackage .RTL,
+.container.InternetPackage.RTL,
 .container.PIN .RTL {
 	background-color: #920E61!important
 }
@@ -634,7 +640,12 @@ div.container.WiMax div.charge {
 div.container.Bill div.Bill {
 	display: block!important
 }
-
+div.operators.InternetPackage {
+	display: block;
+}
+div.operators.InternetPackage div.TAL {
+	display: none
+}
 div.operators.TopUp div.TAL {
 	display: none
 }
@@ -992,9 +1003,8 @@ fieldset .GiftCard .operators {
 
 .container.InternetPackage .MTN,
 .container.InternetPackage .MCI,
-.container.InternetPackage .RTL,
-.container.InternetPackage .TAL {
-	display: none;
+.container.InternetPackage .RTL{
+	display: block;
 }
 
 .service-caution {
@@ -1844,8 +1854,10 @@ div#logo {
 .antivirus-types select {
 	width: 100%
 }
-
-.internetPackage-types select {
+.internetPackage-categories{
+	margin: 6px 3px;
+}
+.internetPackage-types select,.internetPackage-categories select {
 	width: 100%
 }
 
@@ -2102,7 +2114,7 @@ p {
 	.container.InternetPackage .info .InternetPackage.operator.IN-MTN-TDLTE {
 		background: #ffbd00 url(../img/internet-package.png) no-repeat scroll 0 -54px
 	}
-	
+
 	.sim-type-container label {
 		display:block;
 	}
@@ -2278,7 +2290,9 @@ p {
 }
 
 .container.InternetPackage .pay {
-	background-color: #600e03!important
+	background-color: #600e03!important;
+	position: relative;
+	bottom: 10px;
 }
 
 .container.Antivirus .btn-pay {
@@ -2572,6 +2586,10 @@ input[type="radio"] {
 	max-width: 200px;
 }
 
-.sim-type-container label:not(:last-child) {
-	margin-left: 20px;
+.sim-type-container{
+	display: inline-block;
+}
+.sim-type-container label{
+	float: right;
+	width: 50%;
 }
