@@ -142,19 +142,6 @@ div.container {
 .operator.RTL:hover {
     background-position: -150px 0;
 }
-
-.operator.TAL {
-    background: url("../img/mobile-operators.png") no-repeat 0 -91px;
-}
-
-.operator.TAL.active {
-    background-position: 0 0;
-}
-
-.operator.TAL:hover {
-    background-position: 0 0;
-}
-
 div#logo {
 
     height: 51px;
@@ -246,19 +233,6 @@ div#content input[type="text"] {
 .container.PIN form.RTL input[type="submit"]:hover, .container.TopUp form.RTL input[type="submit"]:hover {
     background-color: #C5449F !important;
 }
-
-.container.PIN form.TAL input {
-    border-color: #DE002A !important;
-}
-
-.container.PIN form.TAL input[type="submit"] {
-    background-color: #EC6F6F !important;
-}
-
-.container.PIN form.TAL input[type="submit"]:hover {
-    background-color: #DE002A !important;
-}
-
 #EmailInput {
     letter-spacing: 1px !important;
     padding: 5px 20px 5px 50px !important;
@@ -722,11 +696,6 @@ div.payment-gateways ul li {
 .container.PIN form.RTL div.payment-gateways ul li, .container.TopUp form.RTL div.payment-gateways ul li {
     border-color: #C5449F !important;
 }
-
-.container.PIN form.TAL div.payment-gateways ul li {
-    border-color: #DE002A !important;
-}
-
 div .loading {
     display: none;
 }
@@ -913,16 +882,11 @@ div.container.TopUp div.charge, div.container.PIN div.charge, div.container.WiMa
 div.container.Bill div.Bill {
     display: block !important;
 }
-
-div.operators.TopUp div.TAL {
+div.operators.WiMax div.MCI, div.operators.WiMax div.RTL {
     display: none;
 }
 
-div.operators.WiMax div.MCI, div.operators.WiMax div.TAL, div.operators.WiMax div.RTL {
-    display: none;
-}
-
-div.operators.Bill > div, div.operators.TrafficCard > div, div.operators.GiftCard > div, div.operators.Antivirus > div, div.operators.InternetPackage > div.TAL {
+div.operators.Bill > div, div.operators.TrafficCard > div, div.operators.GiftCard > div, div.operators.Antivirus > div {
     display: none;
 }
 
@@ -930,7 +894,7 @@ div.operators.InternetPackage {
     width: 50px;
 }
 
-div.operators.GiftCard > div.MTN, div.operators.GiftCard > div.MCI, div.operators.GiftCard > div.RTL, div.operators.GiftCard > div.TAL {
+div.operators.GiftCard > div.MTN, div.operators.GiftCard > div.MCI, div.operators.GiftCard > div.RTL {
     display: none;
 }
 

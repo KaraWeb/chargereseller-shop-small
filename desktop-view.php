@@ -46,7 +46,6 @@
 				<div data-type="MTN" class="operator MTN"><i></i></div>
 				<div data-type="MCI" class="operator MCI"><i></i></div>
 				<div data-type="RTL" class="operator RTL"><i></i></div>
-				<div data-type="TAL" class="operator TAL"><i></i></div>
 			</div>
 			<div id="content" >
 				<form accept-charset="utf-8" method="post" id="chargeform" action="http://www.chr724.ir/services/EasyCharge/">
@@ -295,7 +294,7 @@
 						<input type="hidden" id="dataIssuer" name="data[issuer]">
 						<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
 						<input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.1">
+						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.2">
 						<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 						<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
 					</fieldset>

@@ -125,11 +125,6 @@ div.container {
 .operator.RTL {
 	background: url(../img/operators.png) no-repeat center -128px
 }
-
-.operator.TAL {
-	background: url(../img/operators.png) no-repeat center -192px
-}
-
 div#content {
 	width: 100%;
 	float: right
@@ -210,12 +205,6 @@ div#content input[type="text"] {
 	background-color: #2B6AAF;
 	height: 576px;
 }
-
-.container.TAL {
-	background-color: #FF0026;
-	height: 576px;
-}
-
 .container.Application {
 	background-color: #96C120;
 	height: 576px;
@@ -252,11 +241,6 @@ div#content input[type="text"] {
 .container.PIN .RTL {
 	background-color: #920E61!important
 }
-
-.container.PIN .TAL {
-	background-color: #FF0026!important;
-}
-
 div#content input:hover {
 	color: #000
 }
@@ -516,11 +500,6 @@ div.payment-gateways {
 div.payment-gateways ul li {
 	border: 2px solid #75839d!important
 }
-
-.container.PIN form.TAL div.payment-gateways ul li {
-	border-color: #DE002A!important
-}
-
 div.payment-gateways {
 	display: inline-block;
 	text-align: right
@@ -643,15 +622,7 @@ div.container.Bill div.Bill {
 div.operators.InternetPackage {
 	display: block;
 }
-div.operators.InternetPackage div.TAL {
-	display: none
-}
-div.operators.TopUp div.TAL {
-	display: none
-}
-
 div.operators.WiMax div.MCI,
-div.operators.WiMax div.TAL,
 div.operators.WiMax div.RTL,
 div.operators.WiMax div.MTN {
 	display: none
@@ -667,8 +638,7 @@ div.operators.Support > div {
 
 div.operators.GiftCard > div.MTN,
 div.operators.GiftCard > div.MCI,
-div.operators.GiftCard > div.RTL,
-div.operators.GiftCard > div.TAL {
+div.operators.GiftCard > div.RTL{
 	display: none
 }
 
@@ -1629,8 +1599,7 @@ div.failed .explanation h2 {
 .container.Application .TopUp,
 .container.Application .MTN,
 .container.Application .MCI,
-.container.Application .RTL,
-.container.Application .TAL {
+.container.Application .RTL{
 	display: none
 }
 
@@ -2260,15 +2229,6 @@ p {
 .container.TopUp form.RTL .pay {
 	background-color: #4f0232!important
 }
-
-.container.PIN form.TAL .btn-pay {
-	background-color: #b5031d!important
-}
-
-.container.PIN form.TAL .pay {
-	background-color: #680212!important
-}
-
 .container.WiMax form.WiMax .btn-pay {
 	background-color: #038187!important
 }

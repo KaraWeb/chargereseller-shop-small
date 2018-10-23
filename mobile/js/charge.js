@@ -44,10 +44,7 @@ jQuery(document).ready(function ($) {
 			if ($('input#magiccharge').is(':checked')) {
 				DefaultOperator = 'RTL!';
 			}
-		} else if (DefaultOperator == 'TAL') {
-			DefaultOperatorPhone = '0932';
 		}
-		
 		if (DefaultChargeKind == 'WiMax') {
 			DefaultOperatorPhone = '094';
 			DefaultOperator = 'WiMax';
@@ -263,7 +260,7 @@ jQuery(document).ready(function ($) {
 				emailCheck = false;
 			}
 		} else if (DefaultChargeKind == 'PIN') {
-			if ((cellphone.length == 0 || jQuery.inArray(cellphone, ['093', '090', '091', '092', '0932']) != -1) && email.length == 0) {
+			if ((cellphone.length == 0 || jQuery.inArray(cellphone, ['093', '090', '091', '092']) != -1) && email.length == 0) {
 				emptyCheck = false;
 				dialogue('جهت استفاده از خدمات پشتیبانی، ایمیل یا شماره موبایل خود را وارد نمایید.', 'تذکر');
 			} else {
@@ -272,7 +269,7 @@ jQuery(document).ready(function ($) {
 					emailCheck = false;
 				}
 				
-				if (emailCheck && jQuery.inArray(cellphone, ['093', '090', '091', '092', '0932']) == -1) {
+				if (emailCheck && jQuery.inArray(cellphone, ['093', '090', '091', '092']) == -1) {
 					if (cellphone.length == 11 && !isNaN(cellphone)) {
 						if (jQuery.inArray(cellphone.substr(0, 3), ['090', '091', '092', '093', '099']) == -1) {
 							cellphoneCheck = false;
