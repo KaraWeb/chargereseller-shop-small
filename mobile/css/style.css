@@ -2443,40 +2443,46 @@ p {
 		background-size: 620% 215%
 	}
 	div.payment-gateways li.bank-Parsian {
-		background-position: -3px -35px
+		background-position: 0px -35px
 	}
 	div.payment-gateways li.bank-Mellat {
-		background-position: -36px -34px
+		background-position: -28px -34px
 	}
 	div.payment-gateways li.bank-Saman {
-		background-position: -69px -35px
+		background-position: -57px -35px
 	}
 	div.payment-gateways li.bank-Melli {
-		background-position: -135px -45px
+		background-position: -85px -45px
 	}
 	div.payment-gateways li.bank-Fanava {
-		background-position: -134px -35px
+		background-position: -112px -35px
 	}
 	div.payment-gateways li.bank-Zarinpal {
-		background-position: -168px -35px
+		background-position: -142px -35px
+	}
+	div.payment-gateways li.bank-Emtiyaz {
+		background-position: -169px -35px
 	}
 	div.payment-gateways li.active.bank-Parsian {
-		background-position: -3px -2px
+		background-position: 0px -2px
 	}
 	div.payment-gateways li.active.bank-Mellat {
-		background-position: -36px -2px
+		background-position: -28px -2px
 	}
 	div.payment-gateways li.active.bank-Saman {
-		background-position: -69px -2px
+		background-position: -57px -2px
 	}
 	div.payment-gateways li.active.bank-Melli {
-		background-position: -135px 0
+		background-position: -85px 0
 	}
 	div.payment-gateways li.active.bank-Fanava {
-		background-position: -134px -2px
+		background-position: -112px -2px
 	}
 	div.payment-gateways li.active.bank-Zarinpal {
-		background-position: -168px -2px
+		background-position: -142px -2px
+	}
+	div.payment-gateways li.active.bank-Emtiyaz {
+		background-position: -169px -2px
 	}
 	.mobile-modal {
 		max-width: 95%!important
