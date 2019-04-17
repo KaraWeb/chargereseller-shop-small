@@ -2391,6 +2391,9 @@ p {
 	div.payment-gateways li.bank-Fanava {
 		background-position: -215px -53px
 	}
+	div.payment-gateways li.bank-Emtiyaz {
+		background-position: -320px -53px
+	}
 	div.payment-gateways li.bank-Zarinpal {
 		background-position: -269px -53px
 	}
@@ -2408,6 +2411,9 @@ p {
 	}
 	div.payment-gateways li.active.bank-Fanava {
 		background-position: -215px -4px
+	}
+	div.payment-gateways li.active.bank-Emtiyaz {
+		background-position: -320px -4px
 	}
 	div.payment-gateways li.active.bank-Zarinpal {
 		background-position: -269px -4px

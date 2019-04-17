@@ -342,6 +342,7 @@
                                     <li id="Saman" class="bank-Saman" data-tooltip="سامان"></li>
                                     <li id="Melli" class="bank-Melli" data-tooltip="ملی"></li>
                                     <li id="Fanava" class="bank-Fanava" data-tooltip="فن آوا"></li>
+                                    <li id="Emtiyaz" class="bank-Emtiyaz"  style="display: inline-block" data-tooltip="امتیاز"></li>
                                     <li id="Zarinpal" class="bank-Zarinpal" data-tooltip="زرین پال"></li>
                                 </ul>
                                 <p class="caution">خرید با کلیه کارت های بانکی عضو شبکه شتاب امکان پذیر می باشد.</p>
