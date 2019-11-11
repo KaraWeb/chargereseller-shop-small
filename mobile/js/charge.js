@@ -52,8 +52,7 @@ jQuery(document).ready(function ($) {
 
         if (DefaultChargeKind == 'InternetPackage') {
             var selectedType = $('.sim-type-container').find('label.active').data('type');
-            console.log(selectedType);
-            if (selectedType!=null && selectedType.includes('ثابت')) {
+            if (selectedType!=null && selectedType.indexOf('ثابت') !== -1) {
                 DefaultOperatorPhone = '094';
             }
         }
