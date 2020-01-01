@@ -9,6 +9,7 @@
 	<link type="image/x-icon" rel="icon" href="mobile/css/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="mobile/css/jquery.qtip.css"/>
 	<link rel="stylesheet" type="text/css" href="mobile/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="mobile/css/sweetalert2.css"/>
 	<title><?php echo $config['title']; ?></title>
 </head>
 <body>	
@@ -342,7 +343,7 @@
                                     <li id="Saman" class="bank-Saman" data-tooltip="سامان"></li>
                                     <li id="Melli" class="bank-Melli" data-tooltip="ملی"></li>
                                     <li id="Fanava" class="bank-Fanava" data-tooltip="فن آوا"></li>
-                                    <li id="Emtiyaz" class="bank-Emtiyaz" data-tooltip="امتیاز"></li>
+                                    <li id="Emtiyaz" class="bank-Emtiyaz"   data-tooltip="امتیاز"></li>
                                     <li id="Zarinpal" class="bank-Zarinpal" data-tooltip="زرین پال"></li>
                                 </ul>
                                 <p class="caution">خرید با کلیه کارت های بانکی عضو شبکه شتاب امکان پذیر می باشد.</p>
@@ -356,10 +357,11 @@
                             <input type="hidden" id="dataEmail" name="data[email]">
                             <input type="hidden" id="dataType" name="data[type]">
 							<input type="hidden" id="dataProductId" name="data[productId]">
+							<input type="hidden" id="dataIsTarabord" name="data[isTarabord]">
                             <input type="hidden" id="dataIssuer" name="data[issuer]">
 							<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
                             <input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-                            <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.3">
+                            <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.4">
 							<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 							<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
                         </fieldset>
@@ -381,6 +383,7 @@
 	<div class="connecting"><p></p></div>
 	<script type="text/javascript" src="mobile/js/jquery-2.1.0.min.js"></script>
 	<script type="text/javascript" src="mobile/js/jquery.qtip.min.js"></script>
+	<script type="text/javascript" src="mobile/js/sweetalert2.js"></script>
 	<script type="text/javascript" src="mobile/js/charge.js"></script>
     <script type="text/javascript" src="mobile/js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>

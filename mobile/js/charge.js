@@ -3,10 +3,12 @@ jQuery(document).ready(function ($) {
 	var DefaultOperator = 'MTN';
 	var products = null;
 	var paymentGateways = null;
-	var paymentGatewayStatus = {'Bill' : false, 'GiftCard' : false, 'Antivirus' : false, 'InternetPackage' : false};
+    var isTarabord = false;
+    var paymentGatewayStatus = {'Bill' : false, 'GiftCard' : false, 'Antivirus' : false, 'InternetPackage' : false};
 	var DefaultOperatorPhone = '';
 	var Kinds = ["TopUp", "PIN", "InternetPackage", "WiMax", "Bill", "GiftCard", "TrafficCard", "Antivirus"];
-	var KindTitle = ["شارژ مستقیم", "کارت شارژ", "بسته اینترنت", "شارژ وایمکس ایرانسل", "پرداخت قبض", "گیفت کارت", "طرح ترافیک", "آنتی ویروس"];
+    var operatorsName = {"MTN": "ایرانسل", "MCI": "همراه اول", "RTL": "رایتل"};
+    var KindTitle = ["شارژ مستقیم", "کارت شارژ", "بسته اینترنت", "شارژ وایمکس ایرانسل", "پرداخت قبض", "گیفت کارت", "طرح ترافیک", "آنتی ویروس"];
 	var KindDescription = 
 	[
 		'در این سامانه شارژ بصورت تاپ آپ عرضه می گردد و پس ازطی مراحل خرید، سیم کارت شما بصورت خودکار شارژ شده و نیازی به ثبت پین یا رمز شارژ نمی باشد.'
@@ -52,7 +54,7 @@ jQuery(document).ready(function ($) {
 
         if (DefaultChargeKind == 'InternetPackage') {
             var selectedType = $('.sim-type-container').find('label.active').data('type');
-            if (selectedType!=null && selectedType.indexOf('ثابت') !== -1) {
+            if (selectedType!=null && selectedType.includes('ثابت')) {
                 DefaultOperatorPhone = '094';
             }
         }
@@ -195,6 +197,7 @@ jQuery(document).ready(function ($) {
 					$('.cover').fadeOut();
 					$('.connecting').fadeOut();
 					dialogue("در حال حاضر امکان برقرار ارتباط با سرور وجود ندارد. (خطا: " + e.status + ")<br>لطفاً بعداً مراجعه نمایید.", "خطا");
+					isTarabord = false;
 					// console.log(e);
 				}
 			});
@@ -217,14 +220,17 @@ jQuery(document).ready(function ($) {
 			}
 		} else {
 			dialogue(data.errorMessage, "خطا");
+			isTarabord = false;
 			$('.cover').fadeOut();
 			$('.connecting').fadeOut();
 		}
 	}
 	
-	var sendForm = false;
+	var sendForm;
 	function checkForm () {
+		sendForm = false;
 		var emptyCheck = true;
+		var cellphoneFormatCheck = true;
 		var cellphoneCheck = true;
 		var emailCheck = true;
 		var billCheck = true;
@@ -237,23 +243,25 @@ jQuery(document).ready(function ($) {
 		}
 		
 		if (DefaultChargeKind == 'TopUp') {
-			if (cellphone.length == 11 && !isNaN(cellphone)) {
-				if (DefaultOperator == 'MTN' || DefaultOperator == 'MTN!') {
-					if (jQuery.inArray(cellphone.substring(0, 3), ['093', '090']) == -1) {
-						cellphoneCheck = false;
-					}
-				} else if (DefaultOperator == 'MCI') {
-                    if (jQuery.inArray(cellphone.substring(0, 3), ['091', '099']) == -1) {
-                        cellphoneCheck = false;
+            if (!isTarabord) {
+                if (cellphone.length == 11 && !isNaN(cellphone) && jQuery.inArray(cellphone.substr(0, 3), ['090', '091', '092', '093', '099']) !== -1) {
+                    if (DefaultOperator == 'MTN' || DefaultOperator == 'MTN!') {
+                        if (jQuery.inArray(cellphone.substring(0, 3), ['093', '090']) == -1) {
+                            cellphoneFormatCheck = false;
+                        }
+                    } else if (DefaultOperator == 'MCI') {
+                        if (jQuery.inArray(cellphone.substring(0, 3), ['091', '099']) == -1) {
+                            cellphoneFormatCheck = false;
+                        }
+                    } else if (DefaultOperator == 'RTL') {
+                        if (jQuery.inArray(cellphone.substring(0, 4), ['0921', '0922']) == -1) {
+                            cellphoneFormatCheck = false;
+                        }
                     }
-                } else if (DefaultOperator == 'RTL') {
-                    if (jQuery.inArray(cellphone.substring(0, 4), ['0921', '0922']) == -1) {
-                        cellphoneCheck = false;
-                    }
+                } else {
+                    cellphoneCheck = false;
                 }
-			} else {
-				cellphoneCheck = false;
-			}
+            }
 			var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 			if (email.length > 0 && !filter.test(email)) {
 				emailCheck = false;
@@ -306,8 +314,14 @@ jQuery(document).ready(function ($) {
             if (selectedType.includes('ثابت')) {
                 regex = cellphoneFormats['tdlte'];
             }
-            if (!regex.test(cellphone)) {
-                cellphoneCheck = false;
+            if (!isTarabord) {
+                if (cellphone.length == 11 && !isNaN(cellphone) && jQuery.inArray(cellphone.substr(0, 3), ['090', '091', '092', '093', '099']) !== -1) {
+                    if (!regex.test(cellphone)) {
+                        cellphoneFormatCheck = false;
+                    }
+                } else {
+                    cellphoneCheck = false;
+                }
             }
 			var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 			if (email.length > 0 && !filter.test(email)) {
@@ -406,8 +420,39 @@ jQuery(document).ready(function ($) {
 				}
 			}
 		}
-		
-		if (cellphoneCheck == false) {
+        if (cellphoneFormatCheck == false) {
+            if (DefaultChargeKind == 'TopUp' || DefaultChargeKind == 'InternetPackage') {
+                if (!isTarabord) {
+                    Swal.fire({
+                        title: '',
+                        text: "شما " + (DefaultChargeKind === "TopUp" ? "شارژ مستقیم" : "بسته اینترنت") + " " + operatorsName[DefaultOperator] + " را انتخاب کردید اما شماره " + cellphone + " مربوط به اپراتور " + operatorsName[DefaultOperator] + " نیست!" +
+                        " آیا این شماره را به "+operatorsName[DefaultOperator]+" ترابرد کردید؟\n",
+                        type: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'بله ترابرد کردم.',
+                        cancelButtonText:  'خیر اشتباه شد.'
+                    }).then((result) => {
+                        if (result.value) {
+                            cellphoneFormatCheck = true;
+                            isTarabord = true;
+                            $('#dataIsTarabord').val(true);
+                            $(document).find('input[type="submit"]').trigger('click');
+                        } else {
+                            Swal.fire({
+                                title: '',
+                                text:'شماره صحیح  اپراتور ' + operatorsName[DefaultOperator] + " را وارد کنید.",
+                                type: 'warning',
+                                confirmButtonText: 'باشه.',
+                            });
+                        }
+                    });
+                    return;
+                }
+            }
+        }
+        if (cellphoneCheck == false) {
 			if ($('div#content div.' + divType + ' div.input.text.account div.message').length <= 0) {
 				$('div#content div.' + divType + ' div.input.text.account').prepend('<div class="message error-message">شماره وارد شده صحیح نمی باشد.</div>');
 			}
@@ -437,7 +482,7 @@ jQuery(document).ready(function ($) {
 			}
 		}
 		
-		if (emptyCheck && cellphoneCheck && emailCheck && amountCheck) {
+		if (emptyCheck && cellphoneCheck && emailCheck && amountCheck && cellphoneFormatCheck) {
 			sendForm = true;
 		} else {
 			sendForm = false;
