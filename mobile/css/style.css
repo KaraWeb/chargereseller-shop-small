@@ -737,31 +737,28 @@ table#bill-info td span.bill {
 }
 
 table#bill-info td span.bill.water {
-	background: url(../img/bill-operators.png) no-repeat 0 0
+	background: url("../img/bill-operators.png") no-repeat  -1px  0;
 }
-
 table#bill-info td span.bill.electricity {
-	background: url(../img/bill-operators.png) no-repeat -48px 0
+	background: url("../img/bill-operators.png") no-repeat -55px 0;
 }
-
 table#bill-info td span.bill.gas {
-	background: url(../img/bill-operators.png) no-repeat -96px 0
+	background: url("../img/bill-operators.png") no-repeat -115px 0;
 }
-
 table#bill-info td span.bill.telephone {
-	background: url(../img/bill-operators.png) no-repeat -144px 0
+	background: url("../img/bill-operators.png") no-repeat -170px 2px;
 }
-
 table#bill-info td span.bill.cellphone {
-	background: url(../img/bill-operators.png) no-repeat -192px 0
+	background: url("../img/bill-operators.png") no-repeat -220px 0;
 }
-
 table#bill-info td span.bill.mayoralty {
-	background: url(../img/bill-operators.png) no-repeat -240px 0
+	background: url("../img/bill-operators.png") -280px 0;
 }
-
 table#bill-info td span.bill.police {
-	background: url(../img/bill-operators.png) no-repeat -288px 0
+	background: url("../img/bill-operators.png") no-repeat -330px 0;
+}
+table#bill-info td span.bill.pasargad {
+	background: url("../img/bill-operators.png") no-repeat -375px 0;
 }
 
 .container.GiftCard > .GiftCard.operators,

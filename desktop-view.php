@@ -297,7 +297,7 @@
 						<input type="hidden" id="dataIssuer" name="data[issuer]">
 						<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
 						<input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.4">
+						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.3">
 						<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 						<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
 					</fieldset>
