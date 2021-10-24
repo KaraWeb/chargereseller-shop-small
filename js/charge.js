@@ -625,22 +625,6 @@ jQuery(document).ready(function ($) {
 		style: 'qtip-bootstrap qtip-shadow ui-tooltip-rounded helpModalClass'
 	});
 
-	// By suppling no content attribute, the library uses each elements title attribute by default
-	$('.support').qtip({
-	   content: '<p>پشتیبانی تلفنی: 88019574-021</p><p>پشتیبانی گوگل: chargereseller24</p>',
-		style:
-		{
-			classes: 'qtip-green qtip-rounded qtip-shadow',
-			width: '200px'
-		},
-		position:
-		{
-			my: 'top center',  // Position my top left...
-			at: 'bottom center', // at the bottom right of...
-		},
-		hide: 'unfocus'
-	});
-
 	$('div.payment-gateways ul li').qtip({
 		content: {attr: 'data-tooltip'},
 		style:
@@ -1020,6 +1004,21 @@ jQuery(document).ready(function ($) {
 		crossDomain: true,
 		success: function(data) {
 			products = data.products;
+            // By suppling no content attribute, the library uses each elements title attribute by default
+            $('.support').qtip({
+                content: '<p>پشتیبانی تلفنی: '+(data.support.phone || '')+'</p><p>پشتیبانی گوگل: '+(data.support.email || '')+'</p>',
+                style:
+                    {
+                        classes: 'qtip-green qtip-rounded qtip-shadow',
+                        width: '300px'
+                    },
+                position:
+                    {
+                        my: 'top center',  // Position my top left...
+                        at: 'bottom center', // at the bottom right of...
+                    },
+                hide: 'unfocus'
+            });
 			paymentGateways = data.paymentGateways;
 			initailize();
 		},

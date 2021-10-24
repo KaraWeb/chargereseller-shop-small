@@ -298,7 +298,7 @@
 						<input type="hidden" id="dataIssuer" name="data[issuer]">
 						<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
 						<input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.5">
+						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.6">
 						<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 						<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
 					</fieldset>
@@ -318,7 +318,7 @@
 	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
 	<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
 	<script type="text/javascript" src="js/sweetalert2.js"></script>
-    <script type='text/javascript' src='js/charge.js?v=1.0'></script>
+    <script type='text/javascript' src='js/charge.js?v=1.1'></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	<script type="text/javascript">

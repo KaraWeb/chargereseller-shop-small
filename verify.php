@@ -306,22 +306,33 @@
 			hide: false,
 			style: 'qtip-bootstrap qtip-shadow ui-tooltip-rounded helpModalClass'
 		});
-
-		// By suppling no content attribute, the library uses each elements title attribute by default
-		$('.support').qtip({
-		   content: '<p>پشتیبانی تلفنی: 88019574-021</p><p>پشتیبانی گوگل: chargereseller24</p>',
-			style:
-			{
-				classes: 'qtip-green qtip-rounded qtip-shadow',
-				width: '200px'
-			},
-			position:
-			{
-				my: 'top center',  // Position my top left...
-				at: 'bottom center', // at the bottom right of...
-			},
-			hide: 'unfocus'
-		});
+        $.ajax({
+            type: 'GET',
+            url: "https://chr724.ir/services/v3/EasyCharge/initializeDataCategorizedFormat",
+            data: "{}",
+            async: false,
+            contentType: "application/json",
+            dataType: 'jsonp',
+            crossDomain: true,
+            success: function(data) {
+                $('.support').qtip({
+                    content: '<p>پشتیبانی تلفنی: '+(data.support.phone || '')+'</p><p>پشتیبانی گوگل: '+(data.support.email || '')+'</p>',
+                    style:
+                        {
+                            classes: 'qtip-green qtip-rounded qtip-shadow',
+                            width: '300px'
+                        },
+                    position:
+                        {
+                            my: 'top center',  // Position my top left...
+                            at: 'bottom center', // at the bottom right of...
+                        },
+                    hide: 'unfocus'
+                });
+            },
+            error: function(e) {
+            }
+        });
 	</script>
 </body>
 </html>

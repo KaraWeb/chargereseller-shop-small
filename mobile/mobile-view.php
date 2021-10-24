@@ -8,7 +8,7 @@
 	<meta name="keywords" content="<?php echo $config['keywords']; ?>"/>
 	<link type="image/x-icon" rel="icon" href="mobile/css/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="mobile/css/jquery.qtip.css"/>
-	<link rel="stylesheet" type="text/css" href="mobile/css/style.css?v=1.0"/>
+	<link rel="stylesheet" type="text/css" href="mobile/css/style.css?v=1.1"/>
 	<link rel="stylesheet" type="text/css" href="mobile/css/sweetalert2.css"/>
 	<title><?php echo $config['title']; ?></title>
 </head>
@@ -330,8 +330,14 @@
                                 <div class="connecting"><p></p></div>
                             </div>
                             <div class="Support">
-                                <div class="phone-support"><p>پشتیبانی تلفنی<br>021-88019574</p></div>
-                                <div class="gmail-support"><p>پشتیبانی گوگل<br>chargereseller24</p></div>
+                                <div class="phone-support">
+                                    <p>پشتیبانی تلفنی<br>
+                                    <span class="support-number"></span>
+                                    </p></div>
+                                <div class="gmail-support">
+                                    <p>پشتیبانی گوگل<br>
+                                        <span class="support-email"></span>
+                                    </p></div>
                                 <div class="help-support help"><p>راهنما</p></div>
                                 <div class="desktop-support"><a href="<?php echo str_replace('mobile', '', $root) . '?view=desktop'; ?>"><p>نمای دسکتاپ</p></a></div>
                             </div>
@@ -362,7 +368,7 @@
                             <input type="hidden" id="dataIssuer" name="data[issuer]">
 							<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
                             <input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-                            <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.5">
+                            <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.6">
 							<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 							<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
                         </fieldset>
@@ -385,7 +391,7 @@
 	<script type="text/javascript" src="mobile/js/jquery-2.1.0.min.js"></script>
 	<script type="text/javascript" src="mobile/js/jquery.qtip.min.js"></script>
 	<script type="text/javascript" src="mobile/js/sweetalert2.js"></script>
-	<script type="text/javascript" src="mobile/js/charge.js?v=1.0"></script>
+	<script type="text/javascript" src="mobile/js/charge.js?v=1.1"></script>
     <script type="text/javascript" src="mobile/js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	<script type="text/javascript">var WebserviceID = <?php echo '"' . $config['webserviceID'] . '"'; ?>;</script>
