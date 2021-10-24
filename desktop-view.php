@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.css" />
 		<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.skinNice.css" />
 		<link rel="stylesheet" type="text/css" href="css/help.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css?v=1.0" />
 		<link rel="stylesheet" type="text/css" href="css/sweetalert2.css" />
 		<title><?php echo $config['title']; ?></title>
 		
@@ -274,7 +274,8 @@
 						<div class="payment-gateways">
 							<p>درگاه پرداخت: <i></i></p>
 							<ul>
-								<li id="Parsian" class="bank-Parsian" data-tooltip="پارسیان"></li>
+                                <li id="Default" class="bank-Default" data-tooltip="پیشفرض"></li>
+                                <li id="Parsian" class="bank-Parsian" data-tooltip="پارسیان"></li>
 								<li id="Mellat" class="bank-Mellat" data-tooltip="ملت"></li>
 								<li id="Saman" class="bank-Saman" data-tooltip="سامان"></li>
 								<li id="Melli" class="bank-Melli" data-tooltip="ملی"></li>
@@ -297,7 +298,7 @@
 						<input type="hidden" id="dataIssuer" name="data[issuer]">
 						<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
 						<input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.4">
+						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.5">
 						<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 						<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
 					</fieldset>
@@ -317,7 +318,7 @@
 	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
 	<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
 	<script type="text/javascript" src="js/sweetalert2.js"></script>
-	<script type="text/javascript" src="js/charge.js"></script>
+    <script type='text/javascript' src='js/charge.js?v=1.0'></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	<script type="text/javascript">

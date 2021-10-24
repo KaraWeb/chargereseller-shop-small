@@ -1023,11 +1023,18 @@ jQuery(document).ready(function ($) {
 				$('#content fieldset > .' + key).html('<p class="service-caution">در حال حاضر در این دسته محصولی برای فروش وجود ندارد.</p>');
 			}
 		});
-		
-		$.each(paymentGateways, function(index, value) {
-			$('div#content div.payment-gateways ul li#' + value).attr('style', 'display:inline-block;');
-		});
-		
+
+        //Add payment gateways to form
+        paymentGateways = paymentGateways.filter(gateway => gateway == 'Zarinpal' || gateway == 'Emtiyaz');
+        paymentGateways.push('Default');
+        paymentGateways.reverse();
+        if (paymentGateways.length > 1) {
+            $.each(paymentGateways, function (gatewayKey, gatewayValue) {
+                $.each(paymentGateways, function (index, value) {
+                    $('div#content div.payment-gateways ul li#' + value).attr('style', 'display:inline-block;');
+                });
+            });
+        }
 		$.each(products.giftCard, function(key, val) {
 			if (val == '' || val == null) {
 				$('.operator.GiftCard.' + key).hide();

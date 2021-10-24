@@ -787,6 +787,12 @@ div.payment-gateways li.bank-Zarinpal {
     background-position: -225px -45px;
 }
 
+div.payment-gateways li.active.bank-Default {
+    background-position: -314px 2px;
+}
+div.payment-gateways li.bank-Default {
+    background-position: -313px -43px;
+}
 /* Active */
 div.payment-gateways li.active.bank-Parsian {
     background-position: 0 0;
@@ -815,6 +821,7 @@ div.payment-gateways li.active.bank-Emtiyaz {
 div.payment-gateways li.active.bank-Zarinpal {
     background-position: -225px 0;
 }
+
 
 div.Magiccharge, div.NonCreditMTN {
     text-align: right;

@@ -1036,10 +1036,17 @@ jQuery(document).ready(function ($) {
 			}
 		});
 
-		$.each(paymentGateways, function(index, value) {
-			$('div#content div.payment-gateways ul li#' + value).attr('style', 'display:inline-block;');
-		});
-
+        //Add payment gateways to form
+        paymentGateways = paymentGateways.filter(gateway => gateway == 'Zarinpal' || gateway == 'Emtiyaz');
+        paymentGateways.push('Default');
+        paymentGateways.reverse();
+        if (paymentGateways.length > 1) {
+            $.each(paymentGateways, function (gatewayKey, gatewayValue) {
+                $.each(paymentGateways, function (index, value) {
+                	$('div#content div.payment-gateways ul li#' + value).attr('style', 'display:inline-block;');
+                });
+            });
+        }
 		$('div#content div.payment-gateways ul').attr('style', 'width:' + paymentGateways.length * 55 + 'px;');
 
 		$.each(products.giftCard, function(key, val) {

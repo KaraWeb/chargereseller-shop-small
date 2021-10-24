@@ -2389,10 +2389,10 @@ p {
 		background-position: -215px -53px
 	}
 	div.payment-gateways li.bank-Emtiyaz {
-		background-position: -320px -53px
+		background-position: -269px -43px;
 	}
 	div.payment-gateways li.bank-Zarinpal {
-		background-position: -269px -53px
+		background-position: -223px -47px
 	}
 	div.payment-gateways li.bank-Parsian {
 		background-position: -8px -54px
@@ -2410,10 +2410,16 @@ p {
 		background-position: -215px -4px
 	}
 	div.payment-gateways li.active.bank-Emtiyaz {
-		background-position: -320px -4px
+		background-position: -269px 2px;
 	}
 	div.payment-gateways li.active.bank-Zarinpal {
-		background-position: -269px -4px
+		background-position: -223px 0
+	}
+	div.payment-gateways li.active.bank-Default {
+		background-position: -314px 2px;
+	}
+	div.payment-gateways li.bank-Default {
+		background-position: -313px -43px;
 	}
 	.mobile-modal {
 		max-width: 80%!important
