@@ -331,11 +331,11 @@
                             </div>
                             <div class="Support">
                                 <div class="phone-support">
-                                    <p>پشتیبانی تلفنی<br>
+                                    <p>شماره تلفن<br>
                                     <span class="support-number"></span>
                                     </p></div>
                                 <div class="gmail-support">
-                                    <p>پشتیبانی گوگل<br>
+                                    <p>آدرس ایمیل<br>
                                         <span class="support-email"></span>
                                     </p></div>
                                 <div class="help-support help"><p>راهنما</p></div>
@@ -344,7 +344,7 @@
                             <div class="payment-gateways">
                                 <h4>درگاه پرداخت: <i></i></h4>
                                 <ul>
-                                    <li id="Default" class="bank-Default" data-tooltip="پیشفرض"></li>
+                                    <li id="Default" class="bank-Default active" data-tooltip="پیشفرض"></li>
                                     <li id="Parsian" class="bank-Parsian" data-tooltip="پارسیان"></li>
                                     <li id="Mellat" class="bank-Mellat" data-tooltip="ملت"></li>
                                     <li id="Saman" class="bank-Saman" data-tooltip="سامان"></li>
@@ -353,7 +353,7 @@
                                     <li id="Emtiyaz" class="bank-Emtiyaz"   data-tooltip="امتیاز"></li>
                                     <li id="Zarinpal" class="bank-Zarinpal" data-tooltip="زرین پال"></li>
                                 </ul>
-                                <p class="caution">خرید با کلیه کارت های بانکی عضو شبکه شتاب امکان پذیر می باشد.</p>
+                                <p class="caution">خرید با کلیه کارت‌های بانکی امکان پذیر می باشد.</p>
                             </div>
                             <input type="hidden" id="dataWebserviceId" name="data[webserviceId]">
                             <input type="hidden" id="dataRedirectUrl" name="data[redirectUrl]" value="<?php echo $root . '/mobile/verify.php'; ?>">
@@ -391,7 +391,7 @@
 	<script type="text/javascript" src="mobile/js/jquery-2.1.0.min.js"></script>
 	<script type="text/javascript" src="mobile/js/jquery.qtip.min.js"></script>
 	<script type="text/javascript" src="mobile/js/sweetalert2.js"></script>
-	<script type="text/javascript" src="mobile/js/charge.js?v=1.1"></script>
+	<script type="text/javascript" src="mobile/js/charge.js?v=1.3"></script>
     <script type="text/javascript" src="mobile/js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	<script type="text/javascript">var WebserviceID = <?php echo '"' . $config['webserviceID'] . '"'; ?>;</script>

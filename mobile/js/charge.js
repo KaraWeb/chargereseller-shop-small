@@ -1036,8 +1036,10 @@ jQuery(document).ready(function ($) {
                     $('div#content div.payment-gateways ul li#' + value).attr('style', 'display:inline-block;');
                 });
             });
-        }
-		
+        }else{
+        	$('div#content div.payment-gateways').remove();
+		}
+
 		$.each(products.giftCard, function(key, val) {
 			if (val == '' || val == null) {
 				$('.operator.GiftCard.' + key).hide();
