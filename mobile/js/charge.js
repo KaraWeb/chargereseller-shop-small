@@ -623,7 +623,29 @@ jQuery(document).ready(function ($) {
 		DefaultChargeKind = $(this).data('type');
 		$(".nav").removeClass('active');
 		$(this).addClass('active');
-
+        $('.second .container').find('.no-products').remove();
+        if(DefaultChargeKind === 'GiftCard'){
+            var exists = false;
+            for(var item in products.giftCard){
+                if(products.giftCard[item].length !== 0){
+                    exists = true;
+                }
+            }
+            if(!exists){
+                $('.second .container').append('<p class="no-products" style="text-align: center">در حال حاضر این محصول موجود نمی باشد.</p>')
+            }
+		}
+        if(DefaultChargeKind === 'Antivirus'){
+            var exists = false;
+            for(var item in products.antivirus){
+                if(products.antivirus[item].length !== 0){
+                    exists = true;
+                }
+            }
+            if(!exists){
+            	$('.second .container').append('<p class="no-products" style="text-align: center">در حال حاضر این محصول موجود نمی باشد.</p>')
+            }
+        }
 		DefaultOperator = '';
 		if (jQuery.inArray(DefaultChargeKind, ['Bill', 'GiftCard', 'Antivirus']) == -1) {
 			DefaultOperator = 'MTN';
@@ -810,7 +832,6 @@ jQuery(document).ready(function ($) {
 		$('div.container.GiftCard div.GiftCard div.buy').slideDown(1500);
 		$('div.container.GiftCard div.payment-gateways').fadeIn();
 		$('div.container.GiftCard div.submit').fadeIn();
-		
 		paymentGatewayStatus[DefaultChargeKind] = true;
 	});
 	
@@ -1044,8 +1065,7 @@ jQuery(document).ready(function ($) {
 			if (val == '' || val == null) {
 				$('.operator.GiftCard.' + key).hide();
 			}
-		});	
-		
+		});
 		$.each(products.antivirus, function(key, val) {
 			if (val == '' || val == null) {
 				$('.operator.Antivirus.' + key).hide();

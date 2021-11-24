@@ -344,7 +344,7 @@
                             <div class="payment-gateways">
                                 <h4>درگاه پرداخت: <i></i></h4>
                                 <ul>
-                                    <li id="Default" class="bank-Default active" data-tooltip="پیشفرض"></li>
+                                    <li id="Default" class="bank-Default active" data-tooltip="درگاه اصلی"></li>
                                     <li id="Parsian" class="bank-Parsian" data-tooltip="پارسیان"></li>
                                     <li id="Mellat" class="bank-Mellat" data-tooltip="ملت"></li>
                                     <li id="Saman" class="bank-Saman" data-tooltip="سامان"></li>
@@ -368,7 +368,7 @@
                             <input type="hidden" id="dataIssuer" name="data[issuer]">
 							<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
                             <input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-                            <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.6">
+                            <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-Small-5.7">
 							<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 							<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
                         </fieldset>
@@ -391,7 +391,7 @@
 	<script type="text/javascript" src="mobile/js/jquery-2.1.0.min.js"></script>
 	<script type="text/javascript" src="mobile/js/jquery.qtip.min.js"></script>
 	<script type="text/javascript" src="mobile/js/sweetalert2.js"></script>
-	<script type="text/javascript" src="mobile/js/charge.js?v=1.3"></script>
+	<script type="text/javascript" src="mobile/js/charge.js?v=1.4"></script>
     <script type="text/javascript" src="mobile/js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	<script type="text/javascript">var WebserviceID = <?php echo '"' . $config['webserviceID'] . '"'; ?>;</script>

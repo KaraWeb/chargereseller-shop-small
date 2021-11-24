@@ -788,10 +788,10 @@ div.payment-gateways li.bank-Zarinpal {
 }
 
 div.payment-gateways li.active.bank-Default {
-    background-position: -314px 2px;
+    background-position: -315px 2px;
 }
 div.payment-gateways li.bank-Default {
-    background-position: -313px -43px;
+    background-position: -314px -43px;
 }
 /* Active */
 div.payment-gateways li.active.bank-Parsian {

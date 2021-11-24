@@ -10,8 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.css" />
 		<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.skinNice.css" />
 		<link rel="stylesheet" type="text/css" href="css/help.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css?v=1.0" />
-		<link rel="stylesheet" type="text/css" href="css/sweetalert2.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css?v=1.1" />
+		<link rel="stylesheet" type="text/css" href="css/sweetalert2.css?v=1.0" />
 		<title><?php echo $config['title']; ?></title>
 		
 	</head>
@@ -274,7 +274,7 @@
 						<div class="payment-gateways">
 							<p>درگاه پرداخت: <i></i></p>
 							<ul>
-                                <li id="Default" class="bank-Default" data-tooltip="پیشفرض"></li>
+                                <li id="Default" class="bank-Default active" data-tooltip="درگاه اصلی"></li>
                                 <li id="Parsian" class="bank-Parsian" data-tooltip="پارسیان"></li>
 								<li id="Mellat" class="bank-Mellat" data-tooltip="ملت"></li>
 								<li id="Saman" class="bank-Saman" data-tooltip="سامان"></li>
@@ -283,7 +283,7 @@
                                 <li id="Emtiyaz" class="bank-Emtiyaz" data-tooltip="امتیاز"></li>
                                 <li id="Zarinpal" class="bank-Zarinpal" data-tooltip="زرین پال"></li>
 							</ul>
-							<p class="caution">خرید با کلیه کارت های بانکی عضو شبکه شتاب امکان پذیر می باشد.</p>
+							<p class="caution">خرید با کلیه کارت‌های بانکی امکان پذیر می باشد.</p>
 						</div>
 						<input type="hidden" id="dataWebserviceId" name="data[webserviceId]">
 						<input type="hidden" id="dataRedirectUrl" name="data[redirectUrl]" value="<?php echo $root . '/verify.php'; ?>">
@@ -298,7 +298,7 @@
 						<input type="hidden" id="dataIssuer" name="data[issuer]">
 						<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
 						<input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.6">
+						<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-Small-5.7">
 						<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 						<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
 					</fieldset>
@@ -318,7 +318,7 @@
 	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
 	<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
 	<script type="text/javascript" src="js/sweetalert2.js"></script>
-    <script type='text/javascript' src='js/charge.js?v=1.1'></script>
+    <script type='text/javascript' src='js/charge.js?v=1.2'></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	<script type="text/javascript">
